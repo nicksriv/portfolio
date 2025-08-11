@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <header class="container">
+    <div class="identity">
+      <img id="avatar" alt="Avatar"/>
+      <div>
+        <h1 id="name">Your Name</h1>
+        <p id="tagline">Your role • Keywords</p>
+        <div class="meta">
+          <a id="email" href="#"></a>
+          <span>•</span>
+          <a id="phone" href="#"></a>
+          <span>•</span>
+          <a id="location" href="#"></a>
+        </div>
+        <div class="links" id="links"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="summary-section">
+      <h2>Summary</h2>
+      <p id="summary"></p>
+    </section>
+
+    <section id="skills-section">
+      <h2>Skills</h2>
+      <div id="skills" class="chips"></div>
+    </section>
+
+    <section id="experience-section">
+      <h2>Experience</h2>
+      <div id="experience"></div>
+    </section>
+
+    <section id="projects-section">
+      <h2>Projects</h2>
+      <div id="projects"></div>
+    </section>
+
+    <section id="industries-section">
+      <h2>Industries</h2>
+      <div id="industries" class="chips"></div>
+    </section>
+
+    <section id="project-types-section">
+      <h2>Project Types</h2>
+      <div id="project-types" class="chips"></div>
+    </section>
+
+    <section id="education-section">
+      <h2>Education</h2>
+      <div id="education"></div>
+    </section>
+
+    
+  </main>
+
+  <footer class="container">
+    <button id="download">Download PDF</button>
+    <a id="view-pdf" href="NikhilSrivastava_Resume_Ver6.pdf" target="_blank" rel="noopener">View PDF</a>
+    <a id="download-docx" href="NikhilSrivastava_Resume_Ver6.docx" download>Download DOCX</a>
+  </footer>
+
+  <script id="resume-data" type="application/json">
+{
+  "basics": {
+    "name": "Nikhil R. Srivastava",
+    "label": "Chief Technology Officer",
+    "image": "Nikhil_Photo.JPG",
+    "email": "nicksriv@gmail.com",
+    "phone": "+91 9634587121",
+    "location": { "city": "New Delhi", "region": "Delhi" },
+    "profiles": [
+      { "network": "LinkedIn", "username": "nikhilrsrivastava", "url": "https://www.linkedin.com/in/nikhilrsrivastava" }
+    ]
+  },
+  "summary": "Seasoned Chief Technology Officer with 15+ years of experience leading enterprise software development, digital transformation, and technology strategy. Proven success in building and scaling cloud-native, SaaS, and custom applications for global clients. Deep expertise in AWS/Azure, DevOps automation, cybersecurity, and product innovation. Strong track record of driving operational efficiency, GTM strategy, and business growth with a 95%+ team retention in a 45+ member technology team and YoY EBITDA growth of 33% with more than 50% Net GM inclusive of Capex and Opex. Have managed $3M+ technology budget and supported $120M+ organizational revenue from custom technology and HR Tech clients.",
+  "skills": [
+    { "name": "Technology Strategy & Innovation" },
+    { "name": "Cloud Infrastructure" },
+    { "name": "Multi-Cloud (AWS, Azure)" },
+    { "name": "SaaS Architecture" },
+    { "name": "Enterprise Software Architecture" },
+    { "name": "DevOps" },
+    { "name": "CI/CD" },
+    { "name": "Docker" },
+    { "name": "Kubernetes" },
+    { "name": "Jenkins" },
+    { "name": "GenAI / LLM Integration" },
+    { "name": "Agentic AI Development" },
+    { "name": "Product Development & Management" },
+    { "name": "Cloud Security & IAM" },
+    { "name": "Microservices" },
+    { "name": "API Integration" },
+    { "name": "Cloud Cost Optimization" },
+    { "name": "Cross-Functional Leadership" },
+    { "name": "P&L Ownership" },
+    { "name": "Business Continuity & DR" },
+    { "name": "Stakeholder & Vendor Management" },
+    { "name": "Java" },
+    { "name": "Swift" },
+    { "name": "C#" },
+    { "name": "JavaScript" },
+    { "name": "Node.js" },
+    { "name": "React" },
+    { "name": "Android" },
+    { "name": "Kafka" },
+    { "name": "Terraform" },
+    { "name": "GitHub" },
+    { "name": "Bitbucket" },
+    { "name": "Amazon CloudWatch" },
+    { "name": "Grafana" },
+    { "name": "IBM Instana" },
+    { "name": "IAM / MFA / VPN / SSL/TLS / WAF" },
+    { "name": ".NET" },
+    { "name": "J2EE" },
+    { "name": "React Native" },
+    { "name": "MongoDB" },
+    { "name": "PostgreSQL" },
+    { "name": "MySQL" },
+    { "name": "Firebase" },
+    { "name": "Serverless" },
+    { "name": "Monolithic" },
+    { "name": "OWASP" },
+    { "name": "RSA" },
+    { "name": "VAPT" },
+    { "name": "Google Analytics" },
+    { "name": "Intellicus BI" },
+    { "name": "Mixpanel" },
+    { "name": "Clevertap" },
+    { "name": "Power BI" }
+  ],
+  "work": [
+    {
+      "name": "7Con Technologies",
+      "position": "Chief Technology Officer – Edtech and Learning Management Systems",
+      "location": "New Delhi, India",
+      "startDate": "Apr 2024",
+      "endDate": "Present",
+      "highlights": [
+        "Leading the digital transformation strategy for global clients (Marvel, Elsevier, PageSuite) through automation and cloud-native solutions.",
+        "Architected scalable enterprise systems, reducing deployment times and improving security posture using DevOps pipelines.",
+        "Oversaw multi-cloud infrastructure (AWS, Azure) ensuring real-time monitoring, compliance, and cost optimization.",
+        "Increased operational efficiency by ~30% through cloud automation and CI/CD practices."
+      ]
+    },
+    {
+      "name": "V5 Global Services (A First Meridian Company)",
+      "position": "Chief Technology Officer – Retail Marketing Solutions & HR Technology",
+      "location": "New Delhi, India",
+      "startDate": "Jul 2017",
+      "endDate": "Apr 2024",
+      "highlights": [
+        "Directed end-to-end development of SaaS products for clients like Apple, Samsung, Philips, and HP.",
+        "Created No-Code App Builder using MERN stack, Docker, and Kubernetes; enabled dynamic FMCG marketing rollouts.",
+        "Drove cloud cost optimization, achieving 25% reduction through analytics and resource tuning.",
+        "Spearheaded containerized application deployment and API integration for retail systems."
+      ]
+    },
+    {
+      "name": "Appsriv Technologies",
+      "position": "Founder & CEO – IT Applications & Services",
+      "location": "Bangalore, India",
+      "startDate": "Feb 2015",
+      "endDate": "Jun 2017",
+      "highlights": [
+        "Founded a custom app development firm delivering SaaS and cloud-native solutions to clients like Comcast, Saint Gobain, and Bayer.",
+        "Developed IoT cab booking system, a fitness app (Holbe) with 40% user engagement growth, and a supply chain ERP in Oman reducing costs by 20%.",
+        "Led full DevOps lifecycle implementation, streamlining deployment pipelines."
+      ]
+    },
+    {
+      "name": "Bank of America Merrill Lynch",
+      "position": "Assistant Vice President – Retirement Technologies & Wealth Management",
+      "location": "Hopewell, NJ, USA",
+      "startDate": "Jul 2010",
+      "endDate": "Jan 2015",
+      "highlights": [
+        "Oversaw development of retirement account management systems, ensuring 99.5% uptime and multi-layered security.",
+        "Reduced deployment times by automating workflows with DevOps and cloud monitoring tools.",
+        "Collaborated with security and cloud teams to ensure regulatory compliance and data integrity."
+      ]
+    }
+  ],
+  "projects": [
+    {"name":"DutyGuy","url":"https://play.google.com/store/apps/details?id=com.dutyguy.twa","summary":"Playstore URL - https://play.google.com/store/apps/details?id=com.dutyguy.twa The","highlights":[],"images":["portfolio-screenshots/image43.png","portfolio-screenshots/image26.png","portfolio-screenshots/image42.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image44.png"]},
+    {"name":"IMSafeNow","url":"https://play.google.com/store/apps/details?id=com.lata1&hl=en_IN&gl=US","summary":"The application is designed track Safety and Mental well being of near and dear ones and also to report issues to concerned people & authorities. This application has been developed for iOS & Android devices. iOS URL -","highlights":[],"images":["portfolio-screenshots/image45.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image47.png","portfolio-screenshots/image4.png","portfolio-screenshots/image46.png"]},
+    {"name":"The Man Company","url":"https://play.google.com/store/apps/details?id=com.themancompany&hl=en","summary":"The Man Company application is designed to track, shop and notify users of latest trends and Grooming essentials for Men. This application has been developed for iOS & Android devices. iOS URL - https://apps.apple.com/in/app/the-man-company/id1634167429","highlights":[],"images":["portfolio-screenshots/image48.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image50.png","portfolio-screenshots/image4.png","portfolio-screenshots/image49.png"]},
+    {"name":"Bayer CropScience Seal Scan","url":"https://play.google.com/store/apps/details?id=com.bayer.bcs.bayer.CapSealAdvanced&hl=en","summary":"iOS URL - https://apps.apple.com/us/app/bayer-cropscience-seal-scan/id1073106068 Playstore URL -","highlights":[],"images":["portfolio-screenshots/image51.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image52.png"]},
+    {"name":"Empire Report","url":"https://play.google.com/store/apps/details?id=com.perchcreek.empirereportapp&hl=en_IN","summary":"iOS URL - https://apps.apple.com/in/app/empire-report-app/id1548705748 Playstore URL -","highlights":[],"images":["portfolio-screenshots/image53.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image55.png","portfolio-screenshots/image4.png","portfolio-screenshots/image54.png"]},
+    {"name":"Fuel Price","url":"https://play.google.com/store/apps/details?id=skycap.petroldiesel.fuelprice&hl=en_IN","summary":"Playstore URL - https://play.google.com/store/apps/details?id=skycap.petroldiesel.fuelprice&hl=en_IN The Fuel Price application is your AI Mental Health and Wellness Coach for your daily guidance and professional care.","highlights":[],"images":["portfolio-screenshots/image57.png","portfolio-screenshots/image26.png","portfolio-screenshots/image56.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image58.png"]},
+    {"name":"St. Augustine Live Music","url":"https://play.google.com/store/apps/details?id=com.skycap.augustinemusic&hl=en_IN","summary":"Playstore URL - https://play.google.com/store/apps/details?id=com.skycap.augustinemusic&hl=en_IN The St. Augustine Live Music application is share and update the various venues and local artists to listen to in and around the city.","highlights":[],"images":["portfolio-screenshots/image60.png","portfolio-screenshots/image26.png","portfolio-screenshots/image59.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image61.png"]},
+    {"name":"Quote-Gen","url":"https://play.google.com/store/apps/details?id=info.quotegen.quotes&hl=en_IN","summary":"Playstore URL - https://play.google.com/store/apps/details?id=info.quotegen.quotes&hl=en_IN The Quote-Gen application is read and share daily motivational quotes and category based quotes.","highlights":[],"images":["portfolio-screenshots/image63.png","portfolio-screenshots/image26.png","portfolio-screenshots/image62.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image64.png"]},
+    {"name":"Farista","url":"https://play.google.com/store/apps/details?id=com.farista.customer","summary":"– Home Delivery Services iOS URL - https://apps.apple.com/in/app/farista/id6744963715 Playstore","highlights":[],"images":["portfolio-screenshots/image65.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image67.png","portfolio-screenshots/image4.png","portfolio-screenshots/image66.png"]},
+    {"name":"Farista","url":"https://play.google.com/store/apps/details?id=com.farista.delivery","summary":"– Restaurant Partner & Deliveryman Apps iOS URL - https://apps.apple.com/in/app/farista-restaurant-partner/id6743747041 Playstore","highlights":[],"images":["portfolio-screenshots/image68.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image70.png","portfolio-screenshots/image4.png","portfolio-screenshots/image69.png"]},
+    {"name":"Social Engine","url":"https://play.google.com/store/apps/details?id=com.sesolutions","summary":"Playstore URL - https://play.google.com/store/apps/details?id=com.sesolutions The Social Engine application is to share your feelings, whereabouts, to do list etc with friends and family.","highlights":[],"images":["portfolio-screenshots/image72.png","portfolio-screenshots/image26.png","portfolio-screenshots/image71.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image73.png"]},
+    {"name":"Inbook","url":"https://play.google.com/store/apps/details?id=in.inbook.app","summary":": Indian Social Media Playstore URL - https://play.google.com/store/apps/details?id=in.inbook.app","highlights":[],"images":["portfolio-screenshots/image75.png","portfolio-screenshots/image26.png","portfolio-screenshots/image74.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image76.png"]},
+    {"name":"Denhan","url":"https://play.google.com/store/apps/details?id=in.co.skycap.denhanInventory.denhan&hl=en_IN","summary":"Inventory Playstore URL - https://play.google.com/store/apps/details?id=in.co.skycap.denhanInventory.denhan&hl=en_IN","highlights":[],"images":["portfolio-screenshots/image78.png","portfolio-screenshots/image26.png","portfolio-screenshots/image77.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image79.png"]},
+    {"name":"Insulsafe","url":"","summary":"- A Saint-Gobain Application Insulsafe, A Saint- Gobain application for insulating the attic and performance management The application was developed for iphone, ipad, android and tablets with an offline feature and in-app cost calculator.","highlights":[],"images":["portfolio-screenshots/image84.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image83.jpg","portfolio-screenshots/image82.png","portfolio-screenshots/image81.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
+    {"name":"Mexo","url":"","summary":"- A Cab Booking Application is a cab booking application system for the consumer as well as the driver. The trips can be booked and the cost estimates are recorded.","highlights":[],"images":["portfolio-screenshots/image89.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image88.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image87.png","portfolio-screenshots/image4.png","portfolio-screenshots/image86.jpg","portfolio-screenshots/image91.jpg","portfolio-screenshots/image85.png","portfolio-screenshots/image90.jpg"]},
+    {"name":"Movado - A Fashion E-Commerce Application","url":"","summary":"Movado app is a fashion app made for introducing watch models to the masses and raise public awareness. The user has the ability to search, filter results, browse details and buy from a large collection of Movado watches.","highlights":[],"images":["portfolio-screenshots/image26.png","portfolio-screenshots/image99.jpg","portfolio-screenshots/image92.png","portfolio-screenshots/image5.png","portfolio-screenshots/image98.png","portfolio-screenshots/image103.jpg","portfolio-screenshots/image102.jpg","portfolio-screenshots/image4.png","portfolio-screenshots/image97.jpg","portfolio-screenshots/image94.jpg","portfolio-screenshots/image101.jpg","portfolio-screenshots/image96.jpg","portfolio-screenshots/image93.jpg","portfolio-screenshots/image95.png","portfolio-screenshots/image100.jpg"]},
+    {"name":"Bee ERP- Logistics Management & Tracking Application","url":"","summary":"Bee ERP is a full blown ERP system for a South African logistics company. It takes care of order management, finance, fulfillment of orders along with the efficient operational tracking and revenue.","highlights":[],"images":["portfolio-screenshots/image4.png","portfolio-screenshots/image26.png","portfolio-screenshots/image18.png","portfolio-screenshots/image106.jpg","portfolio-screenshots/image105.jpg","portfolio-screenshots/image104.jpg","portfolio-screenshots/image5.png"]},
+    {"name":"ICEGOV - International conference Application","url":"","summary":"This app was designed for the 10th International conference on theory and practice of Electronic Governance. Skills: iOS 8.0, iOS 9.0, Swift, Xcode 7, HockeyApp, HTML","highlights":[],"images":["portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image108.jpg","portfolio-screenshots/image107.jpg"]},
+    {"name":"Myish","url":"","summary":"- A Blogging Application Myish is a blogging application to share interesting images for food and fashion. Users from your area give feedback with either a 'Yay or a Nay' through a simple swipe on everything that they see on Myish. It has a social media engine to connect and build a network of people with common likes, dislikes and tastes.","highlights":[],"images":["portfolio-screenshots/image111.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image110.jpg","portfolio-screenshots/image82.png","portfolio-screenshots/image109.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
+    {"name":"Bottomzup","url":"","summary":"- A Restro -bar Explorer Application Bottomzup is a restrobar explorer app with pricing and offer indication and public awareness of the quality of the place.","highlights":[],"images":["portfolio-screenshots/image5.png","portfolio-screenshots/image26.png","portfolio-screenshots/image4.png","portfolio-screenshots/image114.jpg","portfolio-screenshots/image113.jpg","portfolio-screenshots/image112.png"]},
+    {"name":"SmartPlate","url":"","summary":"– Application for a Bluetooth Enabled IOT Device Smartplate is a bluetooth enabled IOT device connected to the application. The plate shares the calorie count of the dishes served and identifies the diet and lifestyle of the individual.","highlights":[],"images":["portfolio-screenshots/image117.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image116.jpg","portfolio-screenshots/image82.png","portfolio-screenshots/image115.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
+    {"name":"Holbe","url":"","summary":"– A Fitness Tracker Application Holbe is a fitness application tracking the meals along with the workout and other supplement intake of an individual. It displays the tracking of day to day activity and fitness of an individual.","highlights":[],"images":["portfolio-screenshots/image122.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image121.jpg","portfolio-screenshots/image120.jpg","portfolio-screenshots/image119.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image118.png","portfolio-screenshots/image4.png"]},
+    {"name":"Glimpse","url":"","summary":"Analytix – A Psychological Analytical Application Glimpse analytix is a psychological analytical app which assess and records the patient details as per the questionnaire. Built on native platform for both iOS and Android.","highlights":[],"images":["portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image123.png"]},
+    {"name":"Mylan Pharma – A Medical Assistance Application","url":"","summary":"Mylan pharmaceuticals app was for diabetic patients to keep track of the injection site and the dosage on a daily basis. The app was developed for both iOS and Android.","highlights":[],"images":["portfolio-screenshots/image127.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image126.png","portfolio-screenshots/image125.jpg","portfolio-screenshots/image124.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
+    {"name":"Connecting Hearts","url":"https://play.google.com/store/apps/details?id=com.connectinghearts&hl=en_IN&pli=1","summary":"Playstore URL - https://play.google.com/store/apps/details?id=com.connectinghearts&hl=en_IN&pli=1 The Connecting Hearts application is designed to link verified users for matchmaking and establishing lifelong partnerships.","highlights":[],"images":["portfolio-screenshots/image28.png","portfolio-screenshots/image26.png","portfolio-screenshots/image27.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image29.png"]},
+    {"name":"United We Care: Mental Health","url":"https://play.google.com/store/apps/details?id=com.UnitedFor.Her&pcampaignid=web_share","summary":"iOS URL - https://apps.apple.com/in/app/united-we-care/id150132516 Playstore URL -","highlights":[],"images":["portfolio-screenshots/image30.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image32.png","portfolio-screenshots/image4.png","portfolio-screenshots/image31.jpg"]},
+    {"name":"Decode","url":"https://play.google.com/store/apps/details?id=com.decode.cx&hl=en_IN","summary":"Playstore URL - https://play.google.com/store/apps/details?id=com.decode.cx&hl=en_IN The Decode Live application is","highlights":[],"images":["portfolio-screenshots/image34.png","portfolio-screenshots/image26.png","portfolio-screenshots/image33.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image35.png"]},
+    {"name":"Qatalyst","url":"https://play.google.com/store/search?q=qatalyst&c=apps&hl=en_IN","summary":"Playstore URL - https://play.google.com/store/search?q=qatalyst&c=apps&hl=en_IN The","highlights":[],"images":["portfolio-screenshots/image37.png","portfolio-screenshots/image26.png","portfolio-screenshots/image36.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image38.png"]},
+    {"name":"Vryno","url":"https://play.google.com/store/apps/details?id=com.vryno.crm&hl=en_IN","summary":"The CRM application is designed for enterprises to manage their Leads/Deals and their current status. This application has been developed for iOS & Android devices. iOS URL -","highlights":[],"images":["portfolio-screenshots/image39.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image41.png","portfolio-screenshots/image4.png","portfolio-screenshots/image40.png"]}
+  ],
+  "industries": [
+    "EdTech & Learning Management",
+    "Retail & FMCG",
+    "HR Technology",
+    "Banking & Wealth Management",
+    "Media & Publishing",
+    "SaaS Platforms",
+    "Analytics & Business Intelligence",
+    "IoT & Supply Chain / ERP"
+  ],
+  "projectTypes": [
+    "Mobile Applications (Android/iOS)",
+    "SaaS Platforms",
+    "No-Code/Low-Code Builders",
+    "Enterprise Integrations & APIs",
+    "Data & Analytics Dashboards",
+    "IoT Systems",
+    "ERP & Supply Chain",
+    "Cloud Migrations & DevOps Pipelines"
+  ],
+  "education": [
+    {
+      "institution": "University of Pennsylvania",
+      "studyType": "Master of Computer and Information Technology",
+      "area": "",
+      "startDate": "2007",
+      "endDate": "2009",
+      "score": "Philadelphia, PA"
+    },
+    {
+      "institution": "Dr. MGR Educational and Research Institute",
+      "studyType": "Bachelor of Technology",
+      "area": "Electronics & Communication",
+      "startDate": "2003",
+      "endDate": "2007",
+      "score": "Chennai, India"
+    }
+  ],
+  "certificates": [],
+  "awards": [],
+  "publications": []
+}
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
