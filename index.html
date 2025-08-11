@@ -924,6 +924,74 @@
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
         .delay-4 { animation-delay: 0.4s; }
+
+        /* Company logo styles - Clean and integrated */
+        .company-logo {
+            width: 120px;
+            height: 60px;
+            margin-right: 25px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .company-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .company-logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .experience-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .experience-info {
+            flex: 1;
+        }
+
+        /* University logo styles */
+        .university-logo {
+            width: 80px;
+            height: 60px;
+            margin-right: 20px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .university-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .education-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .education-info {
+            flex: 1;
+        }
+
+        /* Responsive design for company logos */
+        @media (max-width: 768px) {
+            .company-logo {
+                width: 80px;
+                height: 40px;
+                margin-right: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1417,9 +1485,16 @@
             </div>
             <div class="experience-timeline">
                 <div class="experience-item fade-in-up">
-                    <div class="job-title">Chief Technology Officer – Edtech and Learning Management Systems</div>
-                    <div class="company">7Con Technologies – New Delhi, India</div>
-                    <div class="job-duration">Apr 2024 – Present</div>
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="logos/7con.png" alt="7Con Technologies Logo">
+                        </div>
+                        <div class="experience-info">
+                            <div class="job-title">Chief Technology Officer – Edtech and Learning Management Systems</div>
+                            <div class="company">7Con Technologies – New Delhi, India</div>
+                            <div class="job-duration">Apr 2024 – Present</div>
+                        </div>
+                    </div>
                     <ul class="job-achievements">
                         <li>Leading digital transformation strategy for global clients (Marvel, Elsevier, PageSuite) through automation and cloud-native solutions</li>
                         <li>Architected scalable enterprise systems, reducing deployment times and improving security posture using DevOps pipelines</li>
@@ -1429,9 +1504,16 @@
                 </div>
 
                 <div class="experience-item fade-in-up delay-1">
-                    <div class="job-title">Chief Technology Officer – Retail Marketing Solutions & HR Technology</div>
-                    <div class="company">V5 Global Services (A First Meridian Company) – New Delhi, India</div>
-                    <div class="job-duration">Jul 2017 – Apr 2024</div>
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="logos/v5globalfm.png" alt="V5 Global Services Logo">
+                        </div>
+                        <div class="experience-info">
+                            <div class="job-title">Chief Technology Officer – Retail Marketing Solutions & HR Technology</div>
+                            <div class="company">V5 Global Services (A First Meridian Company) – New Delhi, India</div>
+                            <div class="job-duration">Jul 2017 – Apr 2024</div>
+                        </div>
+                    </div>
                     <ul class="job-achievements">
                         <li>Directed end-to-end development of SaaS products for clients like Apple, Samsung, Philips, and HP</li>
                         <li>Created No-Code App Builder using MERN stack, Docker, and Kubernetes; enabled dynamic FMCG marketing rollouts</li>
@@ -1441,9 +1523,16 @@
                 </div>
 
                 <div class="experience-item fade-in-up delay-2">
-                    <div class="job-title">Founder & CEO – IT Applications & Services</div>
-                    <div class="company">Appsriv Technologies – Bangalore, India</div>
-                    <div class="job-duration">Feb 2015 – Jun 2017</div>
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="logos/appsriv.png" alt="Appsriv Technologies Logo">
+                        </div>
+                        <div class="experience-info">
+                            <div class="job-title">Founder & CEO – IT Applications & Services</div>
+                            <div class="company">Appsriv Technologies – Bangalore, India</div>
+                            <div class="job-duration">Feb 2015 – Jun 2017</div>
+                        </div>
+                    </div>
                     <ul class="job-achievements">
                         <li>Founded a custom app development firm delivering SaaS and cloud-native solutions to clients like Comcast, Saint Gobain, and Bayer</li>
                         <li>Developed IoT cab booking system, a fitness app (Holbe) with 40% user engagement growth, and a supply chain ERP in Oman reducing costs by 20%</li>
@@ -1452,9 +1541,16 @@
                 </div>
 
                 <div class="experience-item fade-in-up delay-3">
-                    <div class="job-title">Assistant Vice President – Retirement Technologies & Wealth Management</div>
-                    <div class="company">Bank of America Merrill Lynch – Hopewell, NJ</div>
-                    <div class="job-duration">Jul 2010 – Jan 2015</div>
+                    <div class="experience-header">
+                        <div class="company-logo">
+                            <img src="logos/BAML.png" alt="Bank of America Merrill Lynch Logo">
+                        </div>
+                        <div class="experience-info">
+                            <div class="job-title">Assistant Vice President – Retirement Technologies & Wealth Management</div>
+                            <div class="company">Bank of America Merrill Lynch – Hopewell, NJ</div>
+                            <div class="job-duration">Jul 2010 – Jan 2015</div>
+                        </div>
+                    </div>
                     <ul class="job-achievements">
                         <li>Oversaw development of retirement account management systems, ensuring 99.5% uptime and multi-layered security</li>
                         <li>Reduced deployment times by automating workflows with DevOps and cloud monitoring tools</li>
@@ -1567,14 +1663,28 @@
             </div>
             <div class="education-grid">
                 <div class="education-card fade-in-up">
-                    <div class="degree">Master of Computer and Information Technology</div>
-                    <div class="university">University of Pennsylvania – Philadelphia, PA</div>
-                    <div class="education-duration">2007 – 2009</div>
+                    <div class="education-header">
+                        <div class="university-logo">
+                            <img src="logos/upenn.png" alt="University of Pennsylvania Logo">
+                        </div>
+                        <div class="education-info">
+                            <div class="degree">Master of Computer and Information Technology</div>
+                            <div class="university">University of Pennsylvania – Philadelphia, PA</div>
+                            <div class="education-duration">2007 – 2009</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="education-card fade-in-up delay-1">
-                    <div class="degree">Bachelor of Technology in Electronics & Communication</div>
-                    <div class="university">Dr. MGR Educational and Research Institute – Chennai, India</div>
-                    <div class="education-duration">2003 – 2007</div>
+                    <div class="education-header">
+                        <div class="university-logo">
+                            <img src="logos/mgr_institute.png" alt="Dr. MGR Educational and Research Institute Logo">
+                        </div>
+                        <div class="education-info">
+                            <div class="degree">Bachelor of Technology in Electronics & Communication</div>
+                            <div class="university">Dr. MGR Educational and Research Institute – Chennai, India</div>
+                            <div class="education-duration">2003 – 2007</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
