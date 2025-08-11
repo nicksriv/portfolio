@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil R. Srivastava - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            font-size: 12px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 11px;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0066cc;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Summary */
+        .summary {
+            text-align: justify;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 15px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .job-duration {
+            font-size: 10px;
+            color: #666;
+        }
+
+        .company {
+            font-size: 11px;
+            color: #0066cc;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .job-achievements {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .job-achievements li {
+            font-size: 10px;
+            margin-bottom: 3px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .job-achievements li:before {
+            content: "•";
+            color: #0066cc;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-category h4 {
+            font-size: 11px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 9px;
+            color: #333;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 10px;
+        }
+
+        .degree {
+            font-weight: bold;
+            font-size: 11px;
+            color: #333;
+        }
+
+        .university {
+            font-size: 10px;
+            color: #0066cc;
+        }
+
+        .education-duration {
+            font-size: 9px;
+            color: #666;
+        }
+
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .achievement-item {
+            background: #f8f9fa;
+            padding: 10px;
+            border-left: 3px solid #0066cc;
+        }
+
+        .achievement-title {
+            font-weight: bold;
+            font-size: 10px;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .achievement-desc {
+            font-size: 9px;
+            color: #666;
+        }
+
+        /* Page break */
+        .page-break {
+            page-break-before: always;
+        }
+
+        @media print {
+            body {
+                font-size: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="name">NIKHIL R. SRIVASTAVA</div>
+            <div class="title">Chief Technology Officer & Digital Transformation Leader</div>
+            <div class="contact-info">
+                <a href="mailto:nicksriv@gmail.com">nicksriv@gmail.com</a> | 
+                <a href="tel:+919634587121">+91 9634587121</a> | 
+                <a href="https://www.linkedin.com/in/nikhilrsrivastava" target="_blank">linkedin.com/in/nikhilrsrivastava</a> |
+                <a href="https://nicksriv.github.io/portfolio" target="_blank">Portfolio</a>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <div class="section-title">PROFESSIONAL SUMMARY</div>
+            <div class="summary">
+                Seasoned Chief Technology Officer with 15+ years of experience leading enterprise software development, digital transformation, and technology strategy. Proven success in building and scaling cloud-native, SaaS, and custom applications for global clients. Deep expertise in AWS/Azure, DevOps automation, cybersecurity, Information security (ISO27001 Certified), and product innovation. Managed $120M+ organizational revenue with 33% YoY EBITDA growth and maintained 95%+ team retention rate.
+            </div>
+        </div>
+
+        <!-- Key Achievements -->
+        <div class="section">
+            <div class="section-title">KEY ACHIEVEMENTS</div>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-title">Revenue Growth</div>
+                    <div class="achievement-desc">Managed $120M+ organizational revenue and achieved 33% YoY EBITDA growth through strategic technology initiatives.</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-title">Team Leadership</div>
+                    <div class="achievement-desc">Maintained 95%+ team retention rate while leading 45+ member technology team across global projects.</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-title">Cloud Optimization</div>
+                    <div class="achievement-desc">Achieved 25-30% cost reduction through cloud automation, resource optimization, and CI/CD practices.</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-title">Global Portfolio</div>
+                    <div class="achievement-desc">Successfully delivered solutions for Fortune 500 companies including Apple, Samsung, Marvel, Elsevier, HP, Philips, Comcast, and Bayer.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Chief Technology Officer – Edtech and Learning Management Systems</div>
+                    <div class="job-duration">Apr 2024 – Present</div>
+                </div>
+                <div class="company">7Con Technologies – New Delhi, India</div>
+                <ul class="job-achievements">
+                    <li>Leading digital transformation strategy for global clients (Marvel, Elsevier, PageSuite) through automation and cloud-native solutions</li>
+                    <li>Architected scalable enterprise systems, reducing deployment times and improving security posture using DevOps pipelines</li>
+                    <li>Oversaw multi-cloud infrastructure (AWS, Azure) ensuring real-time monitoring, compliance, and cost optimization</li>
+                    <li>Increased operational efficiency by ~30% through cloud automation and CI/CD practices</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Chief Technology Officer – Retail Marketing Solutions & HR Technology</div>
+                    <div class="job-duration">Jul 2017 – Apr 2024</div>
+                </div>
+                <div class="company">V5 Global Services (A First Meridian Company) – New Delhi, India</div>
+                <ul class="job-achievements">
+                    <li>Directed end-to-end development of SaaS products for clients like Apple, Samsung, Philips, and HP</li>
+                    <li>Created No-Code App Builder using MERN stack, Docker, and Kubernetes; enabled dynamic FMCG marketing rollouts</li>
+                    <li>Drove cloud cost optimization, achieving 25% reduction through analytics and resource tuning</li>
+                    <li>Spearheaded containerized application deployment and API integration for retail systems</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Founder & CEO – IT Applications & Services</div>
+                    <div class="job-duration">Feb 2015 – Jun 2017</div>
+                </div>
+                <div class="company">Appsriv Technologies – Bangalore, India</div>
+                <ul class="job-achievements">
+                    <li>Founded a custom app development firm delivering SaaS and cloud-native solutions to clients like Comcast, Saint Gobain, and Bayer</li>
+                    <li>Developed IoT cab booking system, a fitness app (Holbe) with 40% user engagement growth, and a supply chain ERP in Oman reducing costs by 20%</li>
+                    <li>Led full DevOps lifecycle implementation, streamlining deployment pipelines</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Assistant Vice President – Retirement Technologies & Wealth Management</div>
+                    <div class="job-duration">Jul 2010 – Jan 2015</div>
+                </div>
+                <div class="company">Bank of America Merrill Lynch – Hopewell, NJ</div>
+                <ul class="job-achievements">
+                    <li>Oversaw development of retirement account management systems, ensuring 99.5% uptime and multi-layered security</li>
+                    <li>Reduced deployment times by automating workflows with DevOps and cloud monitoring tools</li>
+                    <li>Collaborated with security and cloud teams to ensure regulatory compliance and data integrity</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Technical Expertise -->
+        <div class="section">
+            <div class="section-title">TECHNICAL EXPERTISE</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">NodeJS</span>
+                        <span class="skill-tag">ReactJS</span>
+                        <span class="skill-tag">Android</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Cloud Platforms</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Microsoft Azure</span>
+                        <span class="skill-tag">Multi-Cloud</span>
+                        <span class="skill-tag">Cloud Security</span>
+                        <span class="skill-tag">Cost Optimization</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>DevOps & Tools</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">Kafka</span>
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">CloudWatch</span>
+                        <span class="skill-tag">Grafana</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Security & Frameworks</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">IAM</span>
+                        <span class="skill-tag">MFA</span>
+                        <span class="skill-tag">SSL/TLS</span>
+                        <span class="skill-tag">WAF</span>
+                        <span class="skill-tag">.NET</span>
+                        <span class="skill-tag">J2EE</span>
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">OWASP</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Databases & Analytics</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">Google Analytics</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Mixpanel</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>AI & Architecture</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GenAI/LLM</span>
+                        <span class="skill-tag">Agentic AI</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">Serverless</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">SaaS Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">EDUCATION</div>
+            <div class="education-item">
+                <div class="degree">Master of Computer and Information Technology</div>
+                <div class="university">University of Pennsylvania – Philadelphia, PA</div>
+                <div class="education-duration">2007 – 2009</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Bachelor of Technology in Electronics & Communication</div>
+                <div class="university">Dr. MGR Educational and Research Institute – Chennai, India</div>
+                <div class="education-duration">2003 – 2007</div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <div class="section-title">CERTIFICATIONS</div>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-title">ISO27001 Certified</div>
+                    <div class="achievement-desc">Information Security Management Systems</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-title">Cloud Security</div>
+                    <div class="achievement-desc">AWS & Azure Security Best Practices</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
