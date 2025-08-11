@@ -366,61 +366,6 @@
             font-size: 0.8rem;
         }
 
-        /* Company logo styles - Clean and integrated */
-        .company-logo {
-            width: 120px;
-            height: 60px;
-            margin-right: 25px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .company-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: all 0.3s ease;
-        }
-
-        /* Make specific logos non-transparent */
-        .company-logo img[src*="v5globalfm.png"],
-        .company-logo img[src*="BAML.png"] {
-            background: white;
-            padding: 8px;
-            border-radius: 4px;
-            opacity: 1;
-            filter: none;
-        }
-
-        .company-logo:hover img {
-            transform: scale(1.05);
-        }
-
-        .experience-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .experience-info {
-            flex: 1;
-        }
-
-        /* Responsive design for company logos */
-        @media (max-width: 768px) {
-            .company-logo {
-                width: 80px;
-                height: 40px;
-                margin-right: 20px;
-            }
-            
-            .experience-header {
-                margin-bottom: 12px;
-            }
-        }
-
         /* Skills Section */
         .skills-grid {
             display: grid;
@@ -503,33 +448,6 @@
         .education-duration {
             color: #666;
             font-style: italic;
-        }
-
-        /* University logo styles */
-        .university-logo {
-            width: 80px;
-            height: 60px;
-            margin-right: 20px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .university-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .education-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .education-info {
-            flex: 1;
         }
 
         /* Achievements Section */
@@ -626,7 +544,15 @@
         .screenshots img { width: 100%; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid #e5e7eb; background: #f8f9fb; transition: transform .15s ease, filter .15s ease; }
         .screenshots a:hover img { transform: scale(1.02); filter: brightness(1.05); }
 
-
+        /* Store links under each project */
+        .store-links { display:flex; gap:10px; flex-wrap:wrap; margin: 0 2rem 1rem; }
+        .store-links a { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border:1px solid #e5e7eb; border-radius:8px; color:#0b5ed7; background:#f6fafe; text-decoration:none; }
+        .store-links a:hover { background:#eef6ff; }
+        .store-links i { font-size: 1.1rem; }
+        /* Inline Apple SVG fallback if FA fails */
+        .icon-apple { width: 20px; height: 20px; display:inline-block; color:#0b5ed7; }
+        .store-links .fa-android { color:#3DDC84; }
+        .store-links .fa-link { color:#0b5ed7; }
 
         .project-card {
             background: white;
@@ -861,7 +787,29 @@
             margin-bottom: 0.8rem;
         }
 
+        .app-platforms {
+            display: flex;
+            gap: 0.5rem;
+        }
 
+        .platform {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .platform.ios {
+            background: #007AFF;
+        }
+
+        .platform.android {
+            background: #3DDC84;
+        }
 
         .portfolio-stats {
             display: grid;
@@ -976,45 +924,6 @@
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
         .delay-4 { animation-delay: 0.4s; }
-
-        /* Store links under each project */
-        .store-links { 
-            display: flex; 
-            gap: 10px; 
-            flex-wrap: wrap; 
-            margin: 1rem 0; 
-            justify-content: center;
-        }
-        .store-links a { 
-            display: inline-flex; 
-            align-items: center; 
-            justify-content: center; 
-            width: 40px; 
-            height: 40px; 
-            border: 1px solid #e5e7eb; 
-            border-radius: 8px; 
-            color: #0b5ed7; 
-            background: #f6fafe; 
-            text-decoration: none; 
-            transition: all 0.3s ease;
-        }
-        .store-links a:hover { 
-            background: #eef6ff; 
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .store-links i { 
-            font-size: 1.2rem; 
-        }
-        .store-links .fa-android { 
-            color: #3DDC84; 
-        }
-        .store-links .fa-apple { 
-            color: #007AFF; 
-        }
-        .store-links .fa-link { 
-            color: #0b5ed7; 
-        }
     </style>
 </head>
 <body>
@@ -1274,12 +1183,12 @@
                         <img src="logos/marvel.png" alt="Marvel Comics" onerror="this.remove()"/>
                         <img src="logos/elsevier.png" alt="Elsevier" onerror="this.remove()"/>
                         <img src="logos/knovel.png" alt="Knovel" onerror="this.remove()"/>
-                        <img src="logos/pagesuite.png" alt="PageSuite" onerror="this.remove()"/>
-                        <img src="logos/wpl.png" alt="World Public Library" onerror="this.remove()"/>
-                        <img src="logos/digitalindia.png" alt="Digital India" onerror="this.remove()"/>
+                        <img src="logos/simon_schuster.png" alt="Simon & Schuster" onerror="this.remove()"/>
+                        <img src="logos/world_public_library.png" alt="World Public Library" onerror="this.remove()"/>
+                        <img src="logos/digital_india.png" alt="Digital India" onerror="this.remove()"/>
                         <img src="logos/mylan.png" alt="Mylan Pharmaceuticals" onerror="this.remove()"/>
                         <img src="logos/comcast.png" alt="Comcast" onerror="this.remove()"/>
-                        <img src="logos/tmc.png" alt="The Man Company" onerror="this.remove()"/>
+                        <img src="logos/the_man_company.png" alt="The Man Company" onerror="this.remove()"/>
                     </div>
                 </div>
                 
@@ -1295,6 +1204,10 @@
                                 <div class="app-info">
                                     <h5>United We Care</h5>
                                     <p>AI Mental Health & Wellness Coach</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="app-card fade-in-up delay-1">
@@ -1304,6 +1217,10 @@
                                 <div class="app-info">
                                     <h5>Holbe</h5>
                                     <p>Fitness Tracker with 40% engagement growth</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="app-card fade-in-up delay-2">
@@ -1313,6 +1230,10 @@
                                 <div class="app-info">
                                     <h5>Mylan Pharma</h5>
                                     <p>Diabetic patient injection tracking</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1329,6 +1250,10 @@
                                 <div class="app-info">
                                     <h5>Vryno CRM</h5>
                                     <p>Enterprise Lead & Deal Management</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="app-card fade-in-up delay-1">
@@ -1338,6 +1263,10 @@
                                 <div class="app-info">
                                     <h5>Bayer CropScience</h5>
                                     <p>Product authenticity verification for farmers</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="app-card fade-in-up delay-2">
@@ -1347,6 +1276,10 @@
                                 <div class="app-info">
                                     <h5>Denhan Inventory</h5>
                                     <p>Real Estate Property Management</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1363,6 +1296,9 @@
                                 <div class="app-info">
                                     <h5>Connecting Hearts</h5>
                                     <p>Verified matchmaking platform</p>
+                                    <div class="app-platforms">
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="app-card fade-in-up delay-1">
@@ -1372,6 +1308,10 @@
                                 <div class="app-info">
                                     <h5>Farista</h5>
                                     <p>Food delivery ecosystem</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="app-card fade-in-up delay-2">
@@ -1381,6 +1321,10 @@
                                 <div class="app-info">
                                     <h5>The Man Company</h5>
                                     <p>Men's grooming essentials platform</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1397,6 +1341,10 @@
                                 <div class="app-info">
                                     <h5>SmartPlate</h5>
                                     <p>IoT-enabled calorie tracking device</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="app-card fade-in-up delay-1">
@@ -1406,6 +1354,9 @@
                                 <div class="app-info">
                                     <h5>Qatalyst</h5>
                                     <p>Facial coding & eye tracking research</p>
+                                    <div class="app-platforms">
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="app-card fade-in-up delay-2">
@@ -1415,6 +1366,9 @@
                                 <div class="app-info">
                                     <h5>Decode</h5>
                                     <p>Real-time customer emotion insights</p>
+                                    <div class="app-platforms">
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1463,16 +1417,9 @@
             </div>
             <div class="experience-timeline">
                 <div class="experience-item fade-in-up">
-                    <div class="experience-header">
-                        <div class="company-logo">
-                            <img src="logos/7con.png" alt="7Con Technologies Logo">
-                        </div>
-                        <div class="experience-info">
-                            <div class="job-title">Chief Technology Officer – Edtech and Learning Management Systems</div>
-                            <div class="company">7Con Technologies – New Delhi, India</div>
-                            <div class="job-duration">Apr 2024 – Present</div>
-                        </div>
-                    </div>
+                    <div class="job-title">Chief Technology Officer – Edtech and Learning Management Systems</div>
+                    <div class="company">7Con Technologies – New Delhi, India</div>
+                    <div class="job-duration">Apr 2024 – Present</div>
                     <ul class="job-achievements">
                         <li>Leading digital transformation strategy for global clients (Marvel, Elsevier, PageSuite) through automation and cloud-native solutions</li>
                         <li>Architected scalable enterprise systems, reducing deployment times and improving security posture using DevOps pipelines</li>
@@ -1482,16 +1429,9 @@
                 </div>
 
                 <div class="experience-item fade-in-up delay-1">
-                    <div class="experience-header">
-                        <div class="company-logo">
-                            <img src="logos/v5globalfm.png" alt="V5 Global Services Logo">
-                        </div>
-                        <div class="experience-info">
-                            <div class="job-title">Chief Technology Officer – Retail Marketing Solutions & HR Technology</div>
-                            <div class="company">V5 Global Services (A First Meridian Company) – New Delhi, India</div>
-                            <div class="job-duration">Jul 2017 – Apr 2024</div>
-                        </div>
-                    </div>
+                    <div class="job-title">Chief Technology Officer – Retail Marketing Solutions & HR Technology</div>
+                    <div class="company">V5 Global Services (A First Meridian Company) – New Delhi, India</div>
+                    <div class="job-duration">Jul 2017 – Apr 2024</div>
                     <ul class="job-achievements">
                         <li>Directed end-to-end development of SaaS products for clients like Apple, Samsung, Philips, and HP</li>
                         <li>Created No-Code App Builder using MERN stack, Docker, and Kubernetes; enabled dynamic FMCG marketing rollouts</li>
@@ -1501,16 +1441,9 @@
                 </div>
 
                 <div class="experience-item fade-in-up delay-2">
-                    <div class="experience-header">
-                        <div class="company-logo">
-                            <img src="logos/appsriv.png" alt="Appsriv Technologies Logo">
-                        </div>
-                        <div class="experience-info">
-                            <div class="job-title">Founder & CEO – IT Applications & Services</div>
-                            <div class="company">Appsriv Technologies – Bangalore, India</div>
-                            <div class="job-duration">Feb 2015 – Jun 2017</div>
-                        </div>
-                    </div>
+                    <div class="job-title">Founder & CEO – IT Applications & Services</div>
+                    <div class="company">Appsriv Technologies – Bangalore, India</div>
+                    <div class="job-duration">Feb 2015 – Jun 2017</div>
                     <ul class="job-achievements">
                         <li>Founded a custom app development firm delivering SaaS and cloud-native solutions to clients like Comcast, Saint Gobain, and Bayer</li>
                         <li>Developed IoT cab booking system, a fitness app (Holbe) with 40% user engagement growth, and a supply chain ERP in Oman reducing costs by 20%</li>
@@ -1519,16 +1452,9 @@
                 </div>
 
                 <div class="experience-item fade-in-up delay-3">
-                    <div class="experience-header">
-                        <div class="company-logo">
-                            <img src="logos/BAML.png" alt="Bank of America Merrill Lynch Logo">
-                        </div>
-                        <div class="experience-info">
-                            <div class="job-title">Assistant Vice President – Retirement Technologies & Wealth Management</div>
-                            <div class="company">Bank of America Merrill Lynch – Hopewell, NJ</div>
-                            <div class="job-duration">Jul 2010 – Jan 2015</div>
-                        </div>
-                    </div>
+                    <div class="job-title">Assistant Vice President – Retirement Technologies & Wealth Management</div>
+                    <div class="company">Bank of America Merrill Lynch – Hopewell, NJ</div>
+                    <div class="job-duration">Jul 2010 – Jan 2015</div>
                     <ul class="job-achievements">
                         <li>Oversaw development of retirement account management systems, ensuring 99.5% uptime and multi-layered security</li>
                         <li>Reduced deployment times by automating workflows with DevOps and cloud monitoring tools</li>
@@ -1641,28 +1567,14 @@
             </div>
             <div class="education-grid">
                 <div class="education-card fade-in-up">
-                    <div class="education-header">
-                        <div class="university-logo">
-                            <img src="logos/upenn.png" alt="University of Pennsylvania Logo">
-                        </div>
-                        <div class="education-info">
-                            <div class="degree">Master of Computer and Information Technology</div>
-                            <div class="university">University of Pennsylvania – Philadelphia, PA</div>
-                            <div class="education-duration">2007 – 2009</div>
-                        </div>
-                    </div>
+                    <div class="degree">Master of Computer and Information Technology</div>
+                    <div class="university">University of Pennsylvania – Philadelphia, PA</div>
+                    <div class="education-duration">2007 – 2009</div>
                 </div>
                 <div class="education-card fade-in-up delay-1">
-                    <div class="education-header">
-                        <div class="university-logo">
-                            <img src="logos/mgr_institute.png" alt="Dr. MGR Educational and Research Institute Logo">
-                        </div>
-                        <div class="education-info">
-                            <div class="degree">Bachelor of Technology in Electronics & Communication</div>
-                            <div class="university">Dr. MGR Educational and Research Institute – Chennai, India</div>
-                            <div class="education-duration">2003 – 2007</div>
-                        </div>
-                    </div>
+                    <div class="degree">Bachelor of Technology in Electronics & Communication</div>
+                    <div class="university">Dr. MGR Educational and Research Institute – Chennai, India</div>
+                    <div class="education-duration">2003 – 2007</div>
                 </div>
             </div>
         </div>
@@ -1706,35 +1618,35 @@
     ]
   },
   "projects": [
-    {"name":"DutyGuy","url":"https://play.google.com/store/apps/details?id=com.dutyguy.twa","playStore":"https://play.google.com/store/apps/details?id=com.dutyguy.twa","appStore":"https://apps.apple.com/in/app/dutyguy/id1234567890","summary":"A comprehensive duty management and task tracking application designed to streamline daily responsibilities and improve productivity through organized task management and progress monitoring.","highlights":[],"images":["portfolio-screenshots/image43.png","portfolio-screenshots/image26.png","portfolio-screenshots/image42.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image44.png"]},
-    {"name":"IMSafeNow","url":"https://play.google.com/store/apps/details?id=com.lata1&hl=en_IN&gl=US","playStore":"https://play.google.com/store/apps/details?id=com.lata1&hl=en_IN&gl=US","appStore":"https://apps.apple.com/in/app/imsafenow/id1234567890","summary":"A comprehensive safety and mental wellness tracking application designed to monitor the well-being of loved ones and facilitate emergency reporting to relevant authorities and contacts.","highlights":[],"images":["portfolio-screenshots/image45.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image47.png","portfolio-screenshots/image4.png","portfolio-screenshots/image46.png"]},
-    {"name":"The Man Company","url":"https://play.google.com/store/apps/details?id=com.themancompany&hl=en","playStore":"https://play.google.com/store/apps/details?id=com.themancompany&hl=en","appStore":"https://apps.apple.com/in/app/the-man-company/id1634167429","summary":"A premium men's grooming e-commerce platform featuring trend tracking, shopping capabilities, and personalized notifications for the latest grooming essentials and lifestyle products.","highlights":[],"images":["portfolio-screenshots/image48.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image50.png","portfolio-screenshots/image4.png","portfolio-screenshots/image49.png"]},
-    {"name":"Bayer CropScience Seal Scan","url":"https://play.google.com/store/apps/details?id=com.bayer.bcs.bayer.CapSealAdvanced&hl=en","playStore":"https://play.google.com/store/apps/details?id=com.bayer.bcs.bayer.CapSealAdvanced&hl=en","appStore":"https://apps.apple.com/us/app/bayer-cropscience-seal-scan/id1073106068","summary":"An advanced product authentication and verification system for Bayer CropScience, enabling farmers to validate product authenticity and ensure quality assurance through innovative seal scanning technology.","highlights":[],"images":["portfolio-screenshots/image51.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image52.png"]},
-    {"name":"Empire Report","url":"https://play.google.com/store/apps/details?id=com.perchcreek.empirereportapp&hl=en_IN","playStore":"https://play.google.com/store/apps/details?id=com.perchcreek.empirereportapp&hl=en_IN","appStore":"https://apps.apple.com/in/app/empire-report-app/id1548705748","summary":"A comprehensive reporting and analytics application designed to provide detailed insights and data visualization capabilities for business intelligence and decision-making processes.","highlights":[],"images":["portfolio-screenshots/image53.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image55.png","portfolio-screenshots/image4.png","portfolio-screenshots/image54.png"]},
-    {"name":"Fuel Price","url":"https://play.google.com/store/apps/details?id=skycap.petroldiesel.fuelprice&hl=en_IN","playStore":"https://play.google.com/store/apps/details?id=skycap.petroldiesel.fuelprice&hl=en_IN","appStore":"","summary":"A real-time fuel price tracking and comparison application providing users with current petrol and diesel prices across different locations, helping optimize fuel costs and travel planning.","highlights":[],"images":["portfolio-screenshots/image57.png","portfolio-screenshots/image26.png","portfolio-screenshots/image56.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image58.png"]},
-    {"name":"St. Augustine Live Music","url":"https://play.google.com/store/apps/details?id=com.skycap.augustinemusic&hl=en_IN","playStore":"https://play.google.com/store/apps/details?id=com.skycap.augustinemusic&hl=en_IN","appStore":"","summary":"A comprehensive live music discovery platform for St. Augustine, featuring venue information, local artist profiles, and real-time updates on live music events and performances throughout the city.","highlights":[],"images":["portfolio-screenshots/image60.png","portfolio-screenshots/image26.png","portfolio-screenshots/image59.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image61.png"]},
-    {"name":"Quote-Gen","url":"https://play.google.com/store/apps/details?id=info.quotegen.quotes&hl=en_IN","playStore":"https://play.google.com/store/apps/details?id=info.quotegen.quotes&hl=en_IN","appStore":"","summary":"A dynamic quote generation and sharing platform featuring daily motivational quotes, categorized content, and social sharing capabilities to inspire and connect users through meaningful content.","highlights":[],"images":["portfolio-screenshots/image63.png","portfolio-screenshots/image26.png","portfolio-screenshots/image62.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image64.png"]},
-    {"name":"Farista","url":"https://play.google.com/store/apps/details?id=com.farista.customer","playStore":"https://play.google.com/store/apps/details?id=com.farista.customer","appStore":"https://apps.apple.com/in/app/farista/id6744963715","summary":"A comprehensive food delivery ecosystem featuring customer ordering, restaurant management, and delivery partner coordination for seamless end-to-end food service operations.","highlights":[],"images":["portfolio-screenshots/image65.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image67.png","portfolio-screenshots/image4.png","portfolio-screenshots/image66.png"]},
-    {"name":"Farista","url":"https://play.google.com/store/apps/details?id=com.farista.delivery","playStore":"https://play.google.com/store/apps/details?id=com.farista.delivery","appStore":"https://apps.apple.com/in/app/farista-restaurant-partner/id6743747041","summary":"A specialized restaurant partner and delivery management application enabling efficient order processing, delivery tracking, and operational coordination for food service businesses.","highlights":[],"images":["portfolio-screenshots/image68.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image70.png","portfolio-screenshots/image4.png","portfolio-screenshots/image69.png"]},
-    {"name":"Social Engine","url":"https://play.google.com/store/apps/details?id=com.sesolutions","playStore":"https://play.google.com/store/apps/details?id=com.sesolutions","appStore":"","summary":"A comprehensive social networking platform enabling users to share personal updates, location information, task lists, and connect with friends and family through an intuitive social media experience.","highlights":[],"images":["portfolio-screenshots/image72.png","portfolio-screenshots/image26.png","portfolio-screenshots/image71.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image73.png"]},
-    {"name":"Inbook","url":"https://play.google.com/store/apps/details?id=in.inbook.app","playStore":"https://play.google.com/store/apps/details?id=in.inbook.app","appStore":"","summary":"A specialized Indian social media platform designed to connect users through localized content, cultural relevance, and community engagement features tailored for the Indian market.","highlights":[],"images":["portfolio-screenshots/image75.png","portfolio-screenshots/image26.png","portfolio-screenshots/image74.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image76.png"]},
-    {"name":"Denhan","url":"https://play.google.com/store/apps/details?id=in.co.skycap.denhanInventory.denhan&hl=en_IN","playStore":"https://play.google.com/store/apps/details?id=in.co.skycap.denhanInventory.denhan&hl=en_IN","appStore":"","summary":"A comprehensive inventory management system designed for real estate and property management, providing efficient tracking, organization, and control of property assets and resources.","highlights":[],"images":["portfolio-screenshots/image78.png","portfolio-screenshots/image26.png","portfolio-screenshots/image77.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image79.png"]},
-    {"name":"Insulsafe","url":"","playStore":"","appStore":"","summary":"A Saint-Gobain insulation management application featuring attic insulation optimization, performance monitoring, and integrated cost calculation tools with offline functionality for comprehensive project management.","highlights":[],"images":["portfolio-screenshots/image84.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image83.jpg","portfolio-screenshots/image82.png","portfolio-screenshots/image81.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
-    {"name":"Mexo","url":"","playStore":"","appStore":"","summary":"A comprehensive cab booking application system designed for both consumers and drivers. The platform enables seamless trip booking with real-time cost estimation and tracking capabilities.","highlights":[],"images":["portfolio-screenshots/image89.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image88.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image87.png","portfolio-screenshots/image4.png","portfolio-screenshots/image86.jpg","portfolio-screenshots/image91.jpg","portfolio-screenshots/image85.png","portfolio-screenshots/image90.jpg"]},
-    {"name":"Movado - A Fashion E-Commerce Application","url":"","playStore":"","appStore":"","summary":"A sophisticated fashion e-commerce application designed to showcase Movado watch models and enhance brand awareness. Features comprehensive search, filtering, detailed product browsing, and seamless purchasing capabilities for an extensive collection of luxury timepieces.","highlights":[],"images":["portfolio-screenshots/image26.png","portfolio-screenshots/image99.jpg","portfolio-screenshots/image92.png","portfolio-screenshots/image5.png","portfolio-screenshots/image98.png","portfolio-screenshots/image103.jpg","portfolio-screenshots/image102.jpg","portfolio-screenshots/image4.png","portfolio-screenshots/image97.jpg","portfolio-screenshots/image94.jpg","portfolio-screenshots/image101.jpg","portfolio-screenshots/image96.jpg","portfolio-screenshots/image93.jpg","portfolio-screenshots/image95.png","portfolio-screenshots/image100.jpg"]},
-    {"name":"Bee ERP- Logistics Management & Tracking Application","url":"","playStore":"","appStore":"","summary":"A comprehensive ERP system developed for a South African logistics company, providing end-to-end order management, financial operations, order fulfillment, and efficient operational tracking with revenue optimization capabilities.","highlights":[],"images":["portfolio-screenshots/image4.png","portfolio-screenshots/image26.png","portfolio-screenshots/image18.png","portfolio-screenshots/image106.jpg","portfolio-screenshots/image105.jpg","portfolio-screenshots/image104.jpg","portfolio-screenshots/image5.png"]},
-    {"name":"ICEGOV - International conference Application","url":"","playStore":"","appStore":"","summary":"A specialized application developed for the 10th International Conference on Theory and Practice of Electronic Governance, featuring conference management, attendee engagement, and digital governance content delivery.","highlights":[],"images":["portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image108.jpg","portfolio-screenshots/image107.jpg"]},
-    {"name":"Myish","url":"","playStore":"","appStore":"","summary":"An innovative blogging and social media platform focused on food and fashion content sharing. Features swipe-based feedback system ('Yay or Nay'), location-based user connections, and community building through shared interests and preferences.","highlights":[],"images":["portfolio-screenshots/image111.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image110.jpg","portfolio-screenshots/image82.png","portfolio-screenshots/image109.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
-    {"name":"Bottomzup","url":"","playStore":"","appStore":"","summary":"A comprehensive restaurant and bar discovery platform featuring pricing information, promotional offers, and community-driven quality ratings to help users make informed dining decisions.","highlights":[],"images":["portfolio-screenshots/image5.png","portfolio-screenshots/image26.png","portfolio-screenshots/image4.png","portfolio-screenshots/image114.jpg","portfolio-screenshots/image113.jpg","portfolio-screenshots/image112.png"]},
-    {"name":"SmartPlate","url":"","playStore":"","appStore":"","summary":"An innovative IoT-enabled smart plate application featuring Bluetooth connectivity for real-time calorie tracking, dietary analysis, and personalized lifestyle recommendations based on meal consumption patterns.","highlights":[],"images":["portfolio-screenshots/image117.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image116.jpg","portfolio-screenshots/image82.png","portfolio-screenshots/image115.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
-    {"name":"Holbe","url":"","playStore":"","appStore":"","summary":"A comprehensive fitness tracking application monitoring meals, workouts, and supplement intake with detailed daily activity tracking and personalized fitness analytics for holistic health management.","highlights":[],"images":["portfolio-screenshots/image122.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image121.jpg","portfolio-screenshots/image120.jpg","portfolio-screenshots/image119.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image118.png","portfolio-screenshots/image4.png"]},
-    {"name":"Glimpse","url":"","playStore":"","appStore":"","summary":"A sophisticated psychological analytics application designed for patient assessment and data recording through comprehensive questionnaires, providing detailed psychological insights and analysis capabilities.","highlights":[],"images":["portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image123.png"]},
-    {"name":"Mylan Pharma – A Medical Assistance Application","url":"","playStore":"","appStore":"","summary":"A specialized medical assistance application for diabetic patients featuring injection site tracking, dosage monitoring, and daily medication management to ensure proper treatment adherence and health outcomes.","highlights":[],"images":["portfolio-screenshots/image127.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image126.png","portfolio-screenshots/image125.jpg","portfolio-screenshots/image124.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
-    {"name":"Connecting Hearts","url":"https://play.google.com/store/apps/details?id=com.connectinghearts&hl=en_IN&pli=1","playStore":"https://play.google.com/store/apps/details?id=com.connectinghearts&hl=en_IN&pli=1","appStore":"","summary":"A verified matchmaking platform designed to connect users for meaningful relationships and lifelong partnerships through secure authentication and personalized compatibility matching.","highlights":[],"images":["portfolio-screenshots/image28.png","portfolio-screenshots/image26.png","portfolio-screenshots/image27.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image29.png"]},
-    {"name":"United We Care: Mental Health","url":"https://play.google.com/store/apps/details?id=com.UnitedFor.Her&pcampaignid=web_share","playStore":"https://play.google.com/store/apps/details?id=com.UnitedFor.Her&pcampaignid=web_share","appStore":"https://apps.apple.com/in/app/united-we-care/id150132516","summary":"A comprehensive mental health and wellness platform providing AI-powered guidance, professional care resources, and daily support for emotional well-being and psychological health management.","highlights":[],"images":["portfolio-screenshots/image30.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image32.png","portfolio-screenshots/image4.png","portfolio-screenshots/image31.jpg"]},
-    {"name":"Decode","url":"https://play.google.com/store/apps/details?id=com.decode.cx&hl=en_IN","playStore":"https://play.google.com/store/apps/details?id=com.decode.cx&hl=en_IN","appStore":"","summary":"A real-time customer emotion analysis and insights platform providing live feedback and sentiment tracking to help businesses understand and respond to customer experiences effectively.","highlights":[],"images":["portfolio-screenshots/image34.png","portfolio-screenshots/image26.png","portfolio-screenshots/image33.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image35.png"]},
-    {"name":"Qatalyst","url":"https://play.google.com/store/search?q=qatalyst&c=apps&hl=en_IN","playStore":"https://play.google.com/store/search?q=qatalyst&c=apps&hl=en_IN","appStore":"","summary":"An advanced facial coding and eye tracking research application designed for behavioral analysis and psychological research, providing comprehensive data collection and analysis tools for scientific studies.","highlights":[],"images":["portfolio-screenshots/image37.png","portfolio-screenshots/image26.png","portfolio-screenshots/image36.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image38.png"]},
-    {"name":"Vryno","url":"https://play.google.com/store/apps/details?id=com.vryno.crm&hl=en_IN","playStore":"https://play.google.com/store/apps/details?id=com.vryno.crm&hl=en_IN","appStore":"","summary":"A comprehensive enterprise CRM application designed for lead and deal management with real-time status tracking, providing businesses with efficient customer relationship management and sales pipeline optimization.","highlights":[],"images":["portfolio-screenshots/image39.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image41.png","portfolio-screenshots/image4.png","portfolio-screenshots/image40.png"]}
+    {"name":"DutyGuy","url":"https://play.google.com/store/apps/details?id=com.dutyguy.twa","summary":"Playstore URL - https://play.google.com/store/apps/details?id=com.dutyguy.twa The","highlights":[],"images":["portfolio-screenshots/image43.png","portfolio-screenshots/image26.png","portfolio-screenshots/image42.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image44.png"]},
+    {"name":"IMSafeNow","url":"https://play.google.com/store/apps/details?id=com.lata1&hl=en_IN&gl=US","summary":"The application is designed track Safety and Mental well being of near and dear ones and also to report issues to concerned people & authorities. This application has been developed for iOS & Android devices. iOS URL -","highlights":[],"images":["portfolio-screenshots/image45.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image47.png","portfolio-screenshots/image4.png","portfolio-screenshots/image46.png"]},
+    {"name":"The Man Company","url":"https://play.google.com/store/apps/details?id=com.themancompany&hl=en","summary":"The Man Company application is designed to track, shop and notify users of latest trends and Grooming essentials for Men. This application has been developed for iOS & Android devices. iOS URL - https://apps.apple.com/in/app/the-man-company/id1634167429","highlights":[],"images":["portfolio-screenshots/image48.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image50.png","portfolio-screenshots/image4.png","portfolio-screenshots/image49.png"]},
+    {"name":"Bayer CropScience Seal Scan","url":"https://play.google.com/store/apps/details?id=com.bayer.bcs.bayer.CapSealAdvanced&hl=en","summary":"iOS URL - https://apps.apple.com/us/app/bayer-cropscience-seal-scan/id1073106068 Playstore URL -","highlights":[],"images":["portfolio-screenshots/image51.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image52.png"]},
+    {"name":"Empire Report","url":"https://play.google.com/store/apps/details?id=com.perchcreek.empirereportapp&hl=en_IN","summary":"iOS URL - https://apps.apple.com/in/app/empire-report-app/id1548705748 Playstore URL -","highlights":[],"images":["portfolio-screenshots/image53.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image55.png","portfolio-screenshots/image4.png","portfolio-screenshots/image54.png"]},
+    {"name":"Fuel Price","url":"https://play.google.com/store/apps/details?id=skycap.petroldiesel.fuelprice&hl=en_IN","summary":"Playstore URL - https://play.google.com/store/apps/details?id=skycap.petroldiesel.fuelprice&hl=en_IN The Fuel Price application is your AI Mental Health and Wellness Coach for your daily guidance and professional care.","highlights":[],"images":["portfolio-screenshots/image57.png","portfolio-screenshots/image26.png","portfolio-screenshots/image56.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image58.png"]},
+    {"name":"St. Augustine Live Music","url":"https://play.google.com/store/apps/details?id=com.skycap.augustinemusic&hl=en_IN","summary":"Playstore URL - https://play.google.com/store/apps/details?id=com.skycap.augustinemusic&hl=en_IN The St. Augustine Live Music application is share and update the various venues and local artists to listen to in and around the city.","highlights":[],"images":["portfolio-screenshots/image60.png","portfolio-screenshots/image26.png","portfolio-screenshots/image59.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image61.png"]},
+    {"name":"Quote-Gen","url":"https://play.google.com/store/apps/details?id=info.quotegen.quotes&hl=en_IN","summary":"Playstore URL - https://play.google.com/store/apps/details?id=info.quotegen.quotes&hl=en_IN The Quote-Gen application is read and share daily motivational quotes and category based quotes.","highlights":[],"images":["portfolio-screenshots/image63.png","portfolio-screenshots/image26.png","portfolio-screenshots/image62.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image64.png"]},
+    {"name":"Farista","url":"https://play.google.com/store/apps/details?id=com.farista.customer","summary":"– Home Delivery Services iOS URL - https://apps.apple.com/in/app/farista/id6744963715 Playstore","highlights":[],"images":["portfolio-screenshots/image65.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image67.png","portfolio-screenshots/image4.png","portfolio-screenshots/image66.png"]},
+    {"name":"Farista","url":"https://play.google.com/store/apps/details?id=com.farista.delivery","summary":"– Restaurant Partner & Deliveryman Apps iOS URL - https://apps.apple.com/in/app/farista-restaurant-partner/id6743747041 Playstore","highlights":[],"images":["portfolio-screenshots/image68.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image70.png","portfolio-screenshots/image4.png","portfolio-screenshots/image69.png"]},
+    {"name":"Social Engine","url":"https://play.google.com/store/apps/details?id=com.sesolutions","summary":"Playstore URL - https://play.google.com/store/apps/details?id=com.sesolutions The Social Engine application is to share your feelings, whereabouts, to do list etc with friends and family.","highlights":[],"images":["portfolio-screenshots/image72.png","portfolio-screenshots/image26.png","portfolio-screenshots/image71.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image73.png"]},
+    {"name":"Inbook","url":"https://play.google.com/store/apps/details?id=in.inbook.app","summary":": Indian Social Media Playstore URL - https://play.google.com/store/apps/details?id=in.inbook.app","highlights":[],"images":["portfolio-screenshots/image75.png","portfolio-screenshots/image26.png","portfolio-screenshots/image74.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image76.png"]},
+    {"name":"Denhan","url":"https://play.google.com/store/apps/details?id=in.co.skycap.denhanInventory.denhan&hl=en_IN","summary":"Inventory Playstore URL - https://play.google.com/store/apps/details?id=in.co.skycap.denhanInventory.denhan&hl=en_IN","highlights":[],"images":["portfolio-screenshots/image78.png","portfolio-screenshots/image26.png","portfolio-screenshots/image77.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image79.png"]},
+    {"name":"Insulsafe","url":"","summary":"- A Saint-Gobain Application Insulsafe, A Saint- Gobain application for insulating the attic and performance management The application was developed for iphone, ipad, android and tablets with an offline feature and in-app cost calculator.","highlights":[],"images":["portfolio-screenshots/image84.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image83.jpg","portfolio-screenshots/image82.png","portfolio-screenshots/image81.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
+    {"name":"Mexo","url":"","summary":"- A Cab Booking Application is a cab booking application system for the consumer as well as the driver. The trips can be booked and the cost estimates are recorded.","highlights":[],"images":["portfolio-screenshots/image89.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image88.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image87.png","portfolio-screenshots/image4.png","portfolio-screenshots/image86.jpg","portfolio-screenshots/image91.jpg","portfolio-screenshots/image85.png","portfolio-screenshots/image90.jpg"]},
+    {"name":"Movado - A Fashion E-Commerce Application","url":"","summary":"Movado app is a fashion app made for introducing watch models to the masses and raise public awareness. The user has the ability to search, filter results, browse details and buy from a large collection of Movado watches.","highlights":[],"images":["portfolio-screenshots/image26.png","portfolio-screenshots/image99.jpg","portfolio-screenshots/image92.png","portfolio-screenshots/image5.png","portfolio-screenshots/image98.png","portfolio-screenshots/image103.jpg","portfolio-screenshots/image102.jpg","portfolio-screenshots/image4.png","portfolio-screenshots/image97.jpg","portfolio-screenshots/image94.jpg","portfolio-screenshots/image101.jpg","portfolio-screenshots/image96.jpg","portfolio-screenshots/image93.jpg","portfolio-screenshots/image95.png","portfolio-screenshots/image100.jpg"]},
+    {"name":"Bee ERP- Logistics Management & Tracking Application","url":"","summary":"Bee ERP is a full blown ERP system for a South African logistics company. It takes care of order management, finance, fulfillment of orders along with the efficient operational tracking and revenue.","highlights":[],"images":["portfolio-screenshots/image4.png","portfolio-screenshots/image26.png","portfolio-screenshots/image18.png","portfolio-screenshots/image106.jpg","portfolio-screenshots/image105.jpg","portfolio-screenshots/image104.jpg","portfolio-screenshots/image5.png"]},
+    {"name":"ICEGOV - International conference Application","url":"","summary":"This app was designed for the 10th International conference on theory and practice of Electronic Governance. Skills: iOS 8.0, iOS 9.0, Swift, Xcode 7, HockeyApp, HTML","highlights":[],"images":["portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image108.jpg","portfolio-screenshots/image107.jpg"]},
+    {"name":"Myish","url":"","summary":"- A Blogging Application Myish is a blogging application to share interesting images for food and fashion. Users from your area give feedback with either a 'Yay or a Nay' through a simple swipe on everything that they see on Myish. It has a social media engine to connect and build a network of people with common likes, dislikes and tastes.","highlights":[],"images":["portfolio-screenshots/image111.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image110.jpg","portfolio-screenshots/image82.png","portfolio-screenshots/image109.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
+    {"name":"Bottomzup","url":"","summary":"- A Restro -bar Explorer Application Bottomzup is a restrobar explorer app with pricing and offer indication and public awareness of the quality of the place.","highlights":[],"images":["portfolio-screenshots/image5.png","portfolio-screenshots/image26.png","portfolio-screenshots/image4.png","portfolio-screenshots/image114.jpg","portfolio-screenshots/image113.jpg","portfolio-screenshots/image112.png"]},
+    {"name":"SmartPlate","url":"","summary":"– Application for a Bluetooth Enabled IOT Device Smartplate is a bluetooth enabled IOT device connected to the application. The plate shares the calorie count of the dishes served and identifies the diet and lifestyle of the individual.","highlights":[],"images":["portfolio-screenshots/image117.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image116.jpg","portfolio-screenshots/image82.png","portfolio-screenshots/image115.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
+    {"name":"Holbe","url":"","summary":"– A Fitness Tracker Application Holbe is a fitness application tracking the meals along with the workout and other supplement intake of an individual. It displays the tracking of day to day activity and fitness of an individual.","highlights":[],"images":["portfolio-screenshots/image122.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image121.jpg","portfolio-screenshots/image120.jpg","portfolio-screenshots/image119.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image118.png","portfolio-screenshots/image4.png"]},
+    {"name":"Glimpse","url":"","summary":"Analytix – A Psychological Analytical Application Glimpse analytix is a psychological analytical app which assess and records the patient details as per the questionnaire. Built on native platform for both iOS and Android.","highlights":[],"images":["portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image123.png"]},
+    {"name":"Mylan Pharma – A Medical Assistance Application","url":"","summary":"Mylan pharmaceuticals app was for diabetic patients to keep track of the injection site and the dosage on a daily basis. The app was developed for both iOS and Android.","highlights":[],"images":["portfolio-screenshots/image127.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image126.png","portfolio-screenshots/image125.jpg","portfolio-screenshots/image124.jpg","portfolio-screenshots/image5.png","portfolio-screenshots/image80.png","portfolio-screenshots/image4.png"]},
+    {"name":"Connecting Hearts","url":"https://play.google.com/store/apps/details?id=com.connectinghearts&hl=en_IN&pli=1","summary":"Playstore URL - https://play.google.com/store/apps/details?id=com.connectinghearts&hl=en_IN&pli=1 The Connecting Hearts application is designed to link verified users for matchmaking and establishing lifelong partnerships.","highlights":[],"images":["portfolio-screenshots/image28.png","portfolio-screenshots/image26.png","portfolio-screenshots/image27.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image29.png"]},
+    {"name":"United We Care: Mental Health","url":"https://play.google.com/store/apps/details?id=com.UnitedFor.Her&pcampaignid=web_share","summary":"iOS URL - https://apps.apple.com/in/app/united-we-care/id150132516 Playstore URL -","highlights":[],"images":["portfolio-screenshots/image30.jpg","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image32.png","portfolio-screenshots/image4.png","portfolio-screenshots/image31.jpg"]},
+    {"name":"Decode","url":"https://play.google.com/store/apps/details?id=com.decode.cx&hl=en_IN","summary":"Playstore URL - https://play.google.com/store/apps/details?id=com.decode.cx&hl=en_IN The Decode Live application is","highlights":[],"images":["portfolio-screenshots/image34.png","portfolio-screenshots/image26.png","portfolio-screenshots/image33.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image35.png"]},
+    {"name":"Qatalyst","url":"https://play.google.com/store/search?q=qatalyst&c=apps&hl=en_IN","summary":"Playstore URL - https://play.google.com/store/search?q=qatalyst&c=apps&hl=en_IN The","highlights":[],"images":["portfolio-screenshots/image37.png","portfolio-screenshots/image26.png","portfolio-screenshots/image36.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image38.png"]},
+    {"name":"Vryno","url":"https://play.google.com/store/apps/details?id=com.vryno.crm&hl=en_IN","summary":"The CRM application is designed for enterprises to manage their Leads/Deals and their current status. This application has been developed for iOS & Android devices. iOS URL -","highlights":[],"images":["portfolio-screenshots/image39.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image41.png","portfolio-screenshots/image4.png","portfolio-screenshots/image40.png"]}
   ]
 }
     </script>
@@ -1871,6 +1783,39 @@
             header.appendChild(h3);
             const content = document.createElement('div');
             content.className = 'project-content';
+            // Store links
+            const storeLinks = document.createElement('div');
+            storeLinks.className = 'store-links';
+            const urls = [p.url, p.playStore, p.appStore].filter(Boolean);
+            const uniqueUrls = Array.from(new Set(urls));
+            uniqueUrls.forEach(u => {
+              const a = document.createElement('a');
+              a.href = u;
+              a.target = '_blank';
+              a.rel = 'noopener';
+              if (u.includes('play.google.com')) {
+                const i = document.createElement('i'); i.className = 'fa-brands fa-android'; i.setAttribute('aria-label','Android'); a.title='Android'; a.appendChild(i);
+              } else if (/\.apple\.com\//i.test(u)) {
+                // Always use inline Apple SVG to ensure visibility
+                const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+                svg.setAttribute('viewBox','0 0 384 512');
+                svg.setAttribute('width','20');
+                svg.setAttribute('height','20');
+                svg.setAttribute('class','icon-apple');
+                a.title='App Store';
+                svg.innerHTML = '<path fill="#0b5ed7" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-27-47.2-41.8-85.1-44.6-35.7-2.8-74.6 21-88.5 21-14.2 0-50-20.5-77.4-20-58.5.9-120.6 34.2-120.6 117.9 0 26 4.7 52.9 14 80.7 12.5 36.7 57.7 126.6 104.7 125 24.6-.6 42-17.5 74.1-17.5 31.3 0 47.4 17.5 77.4 17 47.2-.7 86.8-82.5 99.1-119.3-63.1-29.9-68.7-87.4-67.7-96.4zM259.2 83.1c27.3-32.9 24.8-63 24-73.1-24.1 1.4-52.1 16.4-68.6 36.1-17.7 21-28.9 47.2-26.6 74.2 26.3 2 51.7-13.3 71.2-37.2z"/>';
+                a.appendChild(svg);
+                // Also add Font Awesome brand apple icon as requested
+                const faApple = document.createElement('i');
+                faApple.className = 'fa-brands fa-apple';
+                faApple.setAttribute('aria-hidden', 'true');
+                a.appendChild(faApple);
+              } else {
+                const i = document.createElement('i'); i.className = 'fa-solid fa-link'; a.title='Website'; a.appendChild(i);
+              }
+              storeLinks.appendChild(a);
+            });
+            if (storeLinks.children.length) content.appendChild(storeLinks);
             if (p.summary) {
               const pEl = document.createElement('p');
               // Remove any URL label text remnants
@@ -1909,48 +1854,6 @@
                 gallery.appendChild(a);
               });
               content.appendChild(gallery);
-            }
-
-            // Add store links
-            const storeLinks = document.createElement('div');
-            storeLinks.className = 'store-links';
-            
-            // Add Play Store link if available
-            if (p.playStore && p.playStore.trim()) {
-              const playStoreLink = document.createElement('a');
-              playStoreLink.href = p.playStore;
-              playStoreLink.target = '_blank';
-              playStoreLink.rel = 'noopener';
-              playStoreLink.title = 'Available on Google Play Store';
-              playStoreLink.innerHTML = '<i class="fab fa-android"></i>';
-              storeLinks.appendChild(playStoreLink);
-            }
-            
-            // Add App Store link if available
-            if (p.appStore && p.appStore.trim()) {
-              const appStoreLink = document.createElement('a');
-              appStoreLink.href = p.appStore;
-              appStoreLink.target = '_blank';
-              appStoreLink.rel = 'noopener';
-              appStoreLink.title = 'Available on Apple App Store';
-              appStoreLink.innerHTML = '<i class="fab fa-apple"></i>';
-              storeLinks.appendChild(appStoreLink);
-            }
-            
-            // Add general URL link if no store links but URL exists
-            if ((!p.playStore || !p.playStore.trim()) && (!p.appStore || !p.appStore.trim()) && p.url && p.url.trim()) {
-              const urlLink = document.createElement('a');
-              urlLink.href = p.url;
-              urlLink.target = '_blank';
-              urlLink.rel = 'noopener';
-              urlLink.title = 'View Project';
-              urlLink.innerHTML = '<i class="fas fa-link"></i>';
-              storeLinks.appendChild(urlLink);
-            }
-            
-            // Only add store links container if there are links to show
-            if (storeLinks.children.length > 0) {
-              content.appendChild(storeLinks);
             }
             card.appendChild(header);
             card.appendChild(content);
