@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil R. Srivastava - Chief Technology Officer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #1a1a2e;
+            --accent-color: #16213e;
+            --text-light: #e8e8e8;
+            --text-dark: #333;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --tech-gradient: linear-gradient(45deg, #0066cc, #004499, #002266);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #f8f9fa;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--tech-gradient);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: #a8d8ff;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+        }
+
+        .hero-profile {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 320px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: white;
+            margin: 0 auto 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .contact-item:hover a {
+            color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Professional Summary */
+        .summary {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .summary p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .highlight-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .experience-item {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-left: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--primary-color);
+        }
+
+        .job-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-duration {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .job-achievements {
+            list-style: none;
+        }
+
+        .job-achievements li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .job-achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(45deg, #f0f8ff, #e6f3ff);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 102, 204, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .degree {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .university {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-duration {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 102, 204, 0.2);
+        }
+
+        .achievement-icon {
+            background: var(--gradient);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .achievement-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .achievement-content p {
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Core Competencies */
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .competency-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .competency-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .competency-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #a8d8ff;
+        }
+
+        .competency-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 102, 204, 0.2);
+        }
+
+        .project-header {
+            padding: 2rem 2rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .project-icon {
+            background: var(--gradient);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .project-header h3 {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .project-content {
+            padding: 0 2rem 2rem;
+        }
+
+        .project-content p {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: linear-gradient(45deg, #f0f8ff, #e6f3ff);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(0, 102, 204, 0.2);
+        }
+
+        /* Mobile Portfolio Styles */
+        .mobile-portfolio {
+            margin-top: 4rem;
+        }
+
+        .featured-card {
+            border-left: 5px solid #ff6b35;
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9ff 100%);
+        }
+
+        .industry-coverage {
+            margin-bottom: 3rem;
+        }
+
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .industry-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .industry-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .industry-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .industry-item span {
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .apps-showcase {
+            margin-top: 3rem;
+        }
+
+        .app-category {
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-category h4 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 1rem;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .app-card {
+            background: linear-gradient(145deg, #f8f9ff 0%, #ffffff 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 102, 204, 0.1);
+        }
+
+        .app-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 102, 204, 0.15);
+        }
+
+        .app-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .app-icon.healthcare {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .app-icon.business {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .app-icon.consumer {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .app-icon.innovation {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .app-info {
+            flex: 1;
+        }
+
+        .app-info h5 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .app-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .app-platforms {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .platform {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .platform.ios {
+            background: #007AFF;
+        }
+
+        .platform.android {
+            background: #3DDC84;
+        }
+
+        .portfolio-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            padding: 3rem 0;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item .stat-label {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .experience-timeline {
+                padding-left: 1rem;
+            }
+
+            .experience-item {
+                margin-left: 1rem;
+            }
+
+            .experience-item::before {
+                left: -2rem;
+            }
+
+            .highlight-stats {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation classes */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Delay animations */
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Nikhil R. Srivastava</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Nikhil R. Srivastava</h1>
+                <div class="subtitle">Chief Technology Officer & Digital Transformation Leader</div>
+                <p>Driving innovation through cloud-native solutions, AI integration, and strategic technology leadership. Proven track record of scaling enterprise systems and delivering measurable business outcomes for Fortune 500 clients.</p>
+                <div class="cta-buttons">
+                    <a href="#achievements" class="btn btn-primary">View Achievements</a>
+                    <a href="#projects" class="btn btn-outline">See Projects</a>
+                </div>
+            </div>
+            <div class="hero-profile">
+                <div class="profile-image">
+                   <!---- <i class="fas fa-user-tie"></i>-->
+                    <img src="file:///Users/nikhilsrivastava/Desktop/Nikhil_Photo.JPG"><img>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919634587121">+91 9634587121</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:nicksriv@gmail.com">nicksriv@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/nikhilrsrivastava" target="_blank">LinkedIn Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Summary</h2>
+            </div>
+            <div class="summary fade-in-up">
+                <p>Seasoned Chief Technology Officer with 15+ years of experience leading enterprise software development, digital transformation, and technology strategy. Proven success in building and scaling cloud-native, SaaS, and custom applications for global clients. Deep expertise in AWS/Azure, DevOps automation, cybersecurity, Information security (ISO27001 Certified), and product innovation.</p>
+                
+                <div class="highlight-stats">
+                    <div class="stat-card delay-1">
+                        <span class="stat-number">15+</span>
+                        Years Experience
+                    </div>
+                    <div class="stat-card delay-2">
+                        <span class="stat-number">95%</span>
+                        Team Retention
+                    </div>
+                    <div class="stat-card delay-3">
+                        <span class="stat-number">33%</span>
+                        YoY EBITDA Growth
+                    </div>
+                    <div class="stat-card delay-4">
+                        <span class="stat-number">$120M+</span>
+                        Revenue Managed
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Achievements</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card fade-in-up">
+                    <div class="achievement-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Revenue Growth</h3>
+                        <p>Managed $120M+ organizational revenue and achieved 33% YoY EBITDA growth through strategic technology initiatives and operational excellence.</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-card fade-in-up delay-1">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Team Leadership</h3>
+                        <p>Maintained 95%+ team retention rate while leading a 45+ member technology team across multiple global projects and initiatives.</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-card fade-in-up delay-2">
+                    <div class="achievement-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Cloud Optimization</h3>
+                        <p>Achieved 25-30% cost reduction through cloud automation, resource optimization, and implementation of efficient CI/CD practices.</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-card fade-in-up delay-3">
+                    <div class="achievement-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Certifications</h3>
+                        <p>ISO27001 Certified with deep expertise in cybersecurity, information security protocols, and enterprise compliance frameworks.</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-card fade-in-up delay-4">
+                    <div class="achievement-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Strategic Partnerships</h3>
+                        <p>Established partnerships with industry leaders including Siemens and Dassault Systèmes, enhancing product capabilities and market reach.</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-card fade-in-up delay-5">
+                    <div class="achievement-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Global Client Portfolio</h3>
+                        <p>Successfully delivered solutions for Fortune 500 companies including Apple, Samsung, Marvel, Elsevier, HP, Philips, Comcast, and Bayer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies Section -->
+    <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Core Competencies</h2>
+            </div>
+            <div class="competencies-grid">
+                <div class="competency-item fade-in-up">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Technology Strategy & Innovation</h4>
+                </div>
+                <div class="competency-item fade-in-up delay-1">
+                    <i class="fas fa-cloud"></i>
+                    <h4>Multi-Cloud Infrastructure</h4>
+                </div>
+                <div class="competency-item fade-in-up delay-2">
+                    <i class="fas fa-cogs"></i>
+                    <h4>DevOps & CI/CD</h4>
+                </div>
+                <div class="competency-item fade-in-up delay-3">
+                    <i class="fas fa-robot"></i>
+                    <h4>GenAI/LLM Integration</h4>
+                </div>
+                <div class="competency-item fade-in-up delay-4">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Cloud Security & IAM</h4>
+                </div>
+                <div class="competency-item fade-in-up delay-5">
+                    <i class="fas fa-chart-pie"></i>
+                    <h4>P&L Ownership</h4>
+                </div>
+                <div class="competency-item fade-in-up delay-6">
+                    <i class="fas fa-sitemap"></i>
+                    <h4>Microservices Architecture</h4>
+                </div>
+                <div class="competency-item fade-in-up delay-7">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Stakeholder Management</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Application Portfolio & Solutions</h2>
+                <p style="text-align: center; color: #666; margin-top: 1rem;">Over 50+ applications delivered across multiple industries and platforms</p>
+            </div>
+            
+            <!-- Featured Projects -->
+            <div class="featured-projects">
+                <h3 style="text-align: center; color: var(--primary-color); margin-bottom: 3rem; font-size: 1.8rem;">Featured Enterprise Solutions</h3>
+                <div class="projects-grid">
+                    <div class="project-card fade-in-up featured-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>No-Code App Builder Platform</h3>
+                        </div>
+                        <div class="project-content">
+                            <p>Architected and developed a comprehensive No-Code App Builder using MERN stack, Docker, and Kubernetes. Enabled dynamic FMCG marketing rollouts for major retail clients including Apple, Samsung, and HP.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">MERN Stack</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Kubernetes</span>
+                                <span class="tech-tag">Microservices</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in-up delay-1 featured-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                            <h3>BEE ERP - Logistics Management</h3>
+                        </div>
+                        <div class="project-content">
+                            <p>Full-blown ERP system for South African logistics company. Comprehensive order management, finance, fulfillment tracking, and revenue optimization solution.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">ERP Systems</span>
+                                <span class="tech-tag">Order Management</span>
+                                <span class="tech-tag">Finance Integration</span>
+                                <span class="tech-tag">Logistics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in-up delay-2 featured-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h3>Mexo - IoT Cab Booking System</h3>
+                        </div>
+                        <div class="project-content">
+                            <p>Comprehensive cab booking system with real-time tracking, cost estimation, and dual interfaces for consumers and drivers. IoT-enabled with predictive analytics.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">IoT Integration</span>
+                                <span class="tech-tag">Real-time Tracking</span>
+                                <span class="tech-tag">Dual Interface</span>
+                                <span class="tech-tag">Cost Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Applications Portfolio -->
+            <div class="mobile-portfolio">
+                <h3 style="text-align: center; color: var(--primary-color); margin: 4rem 0 3rem; font-size: 1.8rem;">Mobile Applications Portfolio</h3>
+                <div class="industry-coverage">
+                    <div class="industry-grid">
+                        <div class="industry-item fade-in-up">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Education</span>
+                        </div>
+                        <div class="industry-item fade-in-up delay-1">
+                            <i class="fas fa-hospital"></i>
+                            <span>Healthcare</span>
+                        </div>
+                        <div class="industry-item fade-in-up delay-2">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Retail</span>
+                        </div>
+                        <div class="industry-item fade-in-up delay-3">
+                            <i class="fas fa-heart"></i>
+                            <span>Matrimonial</span>
+                        </div>
+                        <div class="industry-item fade-in-up delay-4">
+                            <i class="fas fa-plane"></i>
+                            <span>Travel</span>
+                        </div>
+                        <div class="industry-item fade-in-up delay-5">
+                            <i class="fas fa-industry"></i>
+                            <span>Manufacturing</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="apps-showcase">
+                    <!-- Healthcare & Wellness Apps -->
+                    <div class="app-category">
+                        <h4><i class="fas fa-heartbeat"></i> Healthcare & Wellness</h4>
+                        <div class="apps-grid">
+                            <div class="app-card fade-in-up">
+                                <div class="app-icon healthcare">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>United We Care</h5>
+                                    <p>AI Mental Health & Wellness Coach</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-card fade-in-up delay-1">
+                                <div class="app-icon healthcare">
+                                    <i class="fas fa-dumbbell"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>Holbe</h5>
+                                    <p>Fitness Tracker with 40% engagement growth</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-card fade-in-up delay-2">
+                                <div class="app-icon healthcare">
+                                    <i class="fas fa-pills"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>Mylan Pharma</h5>
+                                    <p>Diabetic patient injection tracking</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise & Business Apps -->
+                    <div class="app-category">
+                        <h4><i class="fas fa-briefcase"></i> Enterprise & Business</h4>
+                        <div class="apps-grid">
+                            <div class="app-card fade-in-up">
+                                <div class="app-icon business">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>Vryno CRM</h5>
+                                    <p>Enterprise Lead & Deal Management</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-card fade-in-up delay-1">
+                                <div class="app-icon business">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>Bayer CropScience</h5>
+                                    <p>Product authenticity verification for farmers</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-card fade-in-up delay-2">
+                                <div class="app-icon business">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>Denhan Inventory</h5>
+                                    <p>Real Estate Property Management</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consumer & Lifestyle Apps -->
+                    <div class="app-category">
+                        <h4><i class="fas fa-users"></i> Consumer & Lifestyle</h4>
+                        <div class="apps-grid">
+                            <div class="app-card fade-in-up">
+                                <div class="app-icon consumer">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>Connecting Hearts</h5>
+                                    <p>Verified matchmaking platform</p>
+                                    <div class="app-platforms">
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-card fade-in-up delay-1">
+                                <div class="app-icon consumer">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>Farista</h5>
+                                    <p>Food delivery ecosystem</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-card fade-in-up delay-2">
+                                <div class="app-icon consumer">
+                                    <i class="fas fa-male"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>The Man Company</h5>
+                                    <p>Men's grooming essentials platform</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Innovation & IoT Apps -->
+                    <div class="app-category">
+                        <h4><i class="fas fa-lightbulb"></i> Innovation & IoT</h4>
+                        <div class="apps-grid">
+                            <div class="app-card fade-in-up">
+                                <div class="app-icon innovation">
+                                    <i class="fas fa-bluetooth"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>SmartPlate</h5>
+                                    <p>IoT-enabled calorie tracking device</p>
+                                    <div class="app-platforms">
+                                        <span class="platform ios"><i class="fab fa-apple"></i></span>
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-card fade-in-up delay-1">
+                                <div class="app-icon innovation">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>Qatalyst</h5>
+                                    <p>Facial coding & eye tracking research</p>
+                                    <div class="app-platforms">
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="app-card fade-in-up delay-2">
+                                <div class="app-icon innovation">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h5>Decode</h5>
+                                    <p>Real-time customer emotion insights</p>
+                                    <div class="app-platforms">
+                                        <span class="platform android"><i class="fab fa-android"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Statistics -->
+                <div class="portfolio-stats">
+                    <div class="stat-item fade-in-up">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Applications Delivered</div>
+                    </div>
+                    <div class="stat-item fade-in-up delay-1">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">Industries Served</div>
+                    </div>
+                    <div class="stat-item fade-in-up delay-2">
+                        <div class="stat-number">iOS & Android</div>
+                        <div class="stat-label">Cross-Platform Expertise</div>
+                    </div>
+                    <div class="stat-item fade-in-up delay-3">
+                        <div class="stat-number">Global</div>
+                        <div class="stat-label">Client Reach</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="experience-timeline">
+                <div class="experience-item fade-in-up">
+                    <div class="job-title">Chief Technology Officer – Edtech and Learning Management Systems</div>
+                    <div class="company">7Con Technologies – New Delhi, India</div>
+                    <div class="job-duration">Apr 2024 – Present</div>
+                    <ul class="job-achievements">
+                        <li>Leading digital transformation strategy for global clients (Marvel, Elsevier, PageSuite) through automation and cloud-native solutions</li>
+                        <li>Architected scalable enterprise systems, reducing deployment times and improving security posture using DevOps pipelines</li>
+                        <li>Oversaw multi-cloud infrastructure (AWS, Azure) ensuring real-time monitoring, compliance, and cost optimization</li>
+                        <li>Increased operational efficiency by ~30% through cloud automation and CI/CD practices</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item fade-in-up delay-1">
+                    <div class="job-title">Chief Technology Officer – Retail Marketing Solutions & HR Technology</div>
+                    <div class="company">V5 Global Services (A First Meridian Company) – New Delhi, India</div>
+                    <div class="job-duration">Jul 2017 – Apr 2024</div>
+                    <ul class="job-achievements">
+                        <li>Directed end-to-end development of SaaS products for clients like Apple, Samsung, Philips, and HP</li>
+                        <li>Created No-Code App Builder using MERN stack, Docker, and Kubernetes; enabled dynamic FMCG marketing rollouts</li>
+                        <li>Drove cloud cost optimization, achieving 25% reduction through analytics and resource tuning</li>
+                        <li>Spearheaded containerized application deployment and API integration for retail systems</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item fade-in-up delay-2">
+                    <div class="job-title">Founder & CEO – IT Applications & Services</div>
+                    <div class="company">Appsriv Technologies – Bangalore, India</div>
+                    <div class="job-duration">Feb 2015 – Jun 2017</div>
+                    <ul class="job-achievements">
+                        <li>Founded a custom app development firm delivering SaaS and cloud-native solutions to clients like Comcast, Saint Gobain, and Bayer</li>
+                        <li>Developed IoT cab booking system, a fitness app (Holbe) with 40% user engagement growth, and a supply chain ERP in Oman reducing costs by 20%</li>
+                        <li>Led full DevOps lifecycle implementation, streamlining deployment pipelines</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item fade-in-up delay-3">
+                    <div class="job-title">Assistant Vice President – Retirement Technologies & Wealth Management</div>
+                    <div class="company">Bank of America Merrill Lynch – Hopewell, NJ</div>
+                    <div class="job-duration">Jul 2010 – Jan 2015</div>
+                    <ul class="job-achievements">
+                        <li>Oversaw development of retirement account management systems, ensuring 99.5% uptime and multi-layered security</li>
+                        <li>Reduced deployment times by automating workflows with DevOps and cloud monitoring tools</li>
+                        <li>Collaborated with security and cloud teams to ensure regulatory compliance and data integrity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Expertise</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category fade-in-up">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Swift</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">NodeJS</span>
+                        <span class="skill-tag">ReactJS</span>
+                        <span class="skill-tag">Android</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in-up delay-1">
+                    <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Microsoft Azure</span>
+                        <span class="skill-tag">Multi-Cloud</span>
+                        <span class="skill-tag">Cloud Security</span>
+                        <span class="skill-tag">Cost Optimization</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in-up delay-2">
+                    <h3><i class="fas fa-tools"></i> DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Jenkins</span>
+                        <span class="skill-tag">Kafka</span>
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">CloudWatch</span>
+                        <span class="skill-tag">Grafana</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in-up delay-3">
+                    <h3><i class="fas fa-shield-alt"></i> Security & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">IAM</span>
+                        <span class="skill-tag">MFA</span>
+                        <span class="skill-tag">SSL/TLS</span>
+                        <span class="skill-tag">WAF</span>
+                        <span class="skill-tag">.NET</span>
+                        <span class="skill-tag">J2EE</span>
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">OWASP</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in-up delay-4">
+                    <h3><i class="fas fa-database"></i> Databases & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">Google Analytics</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Mixpanel</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in-up delay-5">
+                    <h3><i class="fas fa-robot"></i> AI & Architecture</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GenAI/LLM</span>
+                        <span class="skill-tag">Agentic AI</span>
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">Serverless</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">SaaS Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card fade-in-up">
+                    <div class="degree">Master of Computer and Information Technology</div>
+                    <div class="university">University of Pennsylvania – Philadelphia, PA</div>
+                    <div class="education-duration">2007 – 2009</div>
+                </div>
+                <div class="education-card fade-in-up delay-1">
+                    <div class="degree">Bachelor of Technology in Electronics & Communication</div>
+                    <div class="university">Dr. MGR Educational and Research Institute – Chennai, India</div>
+                    <div class="education-duration">2003 – 2007</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: var(--text-light);">Let's Connect</h2>
+            </div>
+            <div class="social-links">
+                <a href="tel:+919634587121" class="social-link" title="Phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="mailto:nicksriv@gmail.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nikhilrsrivastava" target="_blank" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem;">
+                <strong>Nikhil R. Srivastava - Portfolio:</strong> 50+ applications across Healthcare, Enterprise, Consumer & IoT sectors
+            </p>
+            <p>&copy; 2025 Nikhil R. Srivastava. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(26, 26, 46, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(26, 26, 46, 0.95)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
