@@ -39,6 +39,9 @@
             z-index: 1000;
             padding: 1rem 0;
             transition: all 0.3s ease;
+            height: 80px; /* Fixed height for consistent spacing */
+            display: flex;
+            align-items: center;
         }
 
         .nav-container {
@@ -48,18 +51,32 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 2rem;
+            gap: 2rem; /* Add gap between logo and nav menu */
+            min-width: 0; /* Allow flex items to shrink below content size */
+            width: 100%;
         }
 
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--text-light);
+            white-space: nowrap;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 2rem;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
         }
 
         .nav-menu a {
@@ -82,6 +99,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding-top: 80px; /* Add padding to account for fixed navbar */
         }
 
         .hero::before {
@@ -247,6 +265,9 @@
             padding: 3rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             margin-bottom: 3rem;
+            width: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
         }
 
         .summary p {
@@ -797,10 +818,17 @@
             margin-top: 4rem;
             padding: 3rem 0;
             border-top: 2px solid #f0f0f0;
+            align-items: stretch;
         }
 
         .stat-item {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            min-height: 120px;
         }
 
         .stat-item .stat-number {
@@ -843,7 +871,48 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 2rem;
+            }
+            
+            .hero-content {
+                gap: 3rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .client-logos {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .hero {
+                padding-top: 100px; /* Increase padding for mobile */
+                min-height: calc(100vh - 80px); /* Adjust for navbar height */
+            }
+            
+            .hero-content {
+                padding-top: 2rem; /* Additional top padding */
+            }
+            
+            .summary {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .summary p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -852,14 +921,78 @@
 
             .hero-text h1 {
                 font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .hero-text p {
+                font-size: 1.1rem;
             }
 
+            .mobile-menu-toggle {
+                display: block;
+                margin-left: auto;
+                position: relative;
+                right: 0;
+            }
+            
+            .nav-container {
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+                flex-shrink: 0;
+            }
+            
+            .nav-container {
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+            
             .nav-menu {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 46, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                backdrop-filter: blur(10px);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 1rem;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+            
+            .navbar {
+                padding: 1rem 1.5rem;
             }
 
             .section-title h2 {
                 font-size: 2rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
             }
 
             .experience-timeline {
@@ -873,9 +1006,347 @@
             .experience-item::before {
                 left: -2rem;
             }
+            
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .company-logo {
+                width: 100px;
+                height: 50px;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
 
             .highlight-stats {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
+                width: 100%; /* Ensure full width */
+                max-width: 100%; /* Prevent overflow */
+            }
+            
+            .stat-card {
+                min-width: 0; /* Allow shrinking */
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .education-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .university-logo {
+                width: 80px;
+                height: 50px;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .client-logos {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 1rem;
+            }
+            
+            .client-logos img {
+                max-width: 80px;
+                max-height: 60px;
+            }
+            
+            .apps-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .app-card {
+                padding: 1.5rem;
+            }
+            
+            .portfolio-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                align-items: stretch;
+            }
+            
+            .stat-item {
+                min-height: 100px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .project-card {
+                padding: 1.5rem;
+            }
+            
+            .screenshots {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+            
+            .store-links {
+                margin: 1rem 0 0 0;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding-top: 120px; /* Even more padding for small screens */
+                min-height: calc(100vh - 100px);
+            }
+            
+            .hero-content {
+                padding-top: 1rem;
+                padding-bottom: 2rem;
+            }
+            
+            .logo {
+                font-size: 1rem;
+                flex-shrink: 0;
+            }
+            
+            .nav-container {
+                gap: 0.5rem;
+                padding: 0 0.8rem;
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            .summary {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .summary p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            .hero-profile {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+            
+            .profile-image {
+                width: 200px !important;
+                height: 200px !important;
+                margin: 0 auto 1.5rem;
+            }
+            
+            .contact-info {
+                text-align: center;
+            }
+            
+            .contact-item {
+                justify-content: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .company-logo {
+                width: 80px;
+                height: 40px;
+            }
+            
+            .university-logo {
+                width: 60px;
+                height: 40px;
+            }
+            
+            .client-logos {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 0.8rem;
+            }
+            
+            .client-logos img {
+                max-width: 60px;
+                max-height: 45px;
+            }
+            
+            .apps-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .app-card {
+                padding: 1rem;
+            }
+            
+            .portfolio-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            
+            .stat-item {
+                min-height: 80px;
+            }
+            
+            .project-card {
+                padding: 1rem;
+            }
+            
+            .screenshots {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            
+            .screenshots img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            .store-links {
+                gap: 0.5rem;
+            }
+            
+            .store-links a {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .store-links i {
+                font-size: 0.9rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+            
+            .job-achievements {
+                padding-left: 1rem;
+            }
+            
+            .job-achievements li {
+                margin-bottom: 0.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .highlight-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                width: 100%;
+                max-width: 100%;
+                padding: 0 0.5rem;
+            }
+            
+            .highlight-stats .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .highlight-stats .stat-label {
+                font-size: 0.85rem;
+                word-wrap: break-word;
+            }
+            
+            .stat-card {
+                padding: 0.8rem;
+                text-align: center;
+                min-width: 0;
+                overflow: hidden;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                font-size: 0.9rem;
+                flex-shrink: 0;
+            }
+            
+            .nav-container {
+                gap: 0.3rem;
+                padding: 0 0.5rem;
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            .mobile-menu-toggle {
+                margin-left: auto;
+                flex-shrink: 0;
+                position: relative;
+                right: 0;
+            }
+            
+            .highlight-stats {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+                padding: 0 0.3rem;
+            }
+            
+            .highlight-stats .stat-number {
+                font-size: 1.6rem;
+            }
+            
+            .highlight-stats .stat-label {
+                font-size: 0.8rem;
+            }
+            
+            .stat-card {
+                padding: 0.6rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .company-logo {
+                width: 70px;
+                height: 35px;
+            }
+            
+            .university-logo {
+                width: 50px;
+                height: 35px;
+            }
+            
+            .client-logos img {
+                max-width: 50px;
+                max-height: 40px;
+            }
+            
+            .store-links a {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .store-links i {
+                font-size: 0.8rem;
             }
         }
 
@@ -978,7 +1449,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Nikhil R. Srivastava</div>
-            <ul class="nav-menu">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -1386,7 +1860,7 @@
                         <div class="stat-label">Industries Served</div>
                     </div>
                     <div class="stat-item fade-in-up delay-2">
-                        <div class="stat-number">iOS & Android</div>
+                        <div class="stat-number">Full Stack</div>
                         <div class="stat-label">Cross-Platform Expertise</div>
                     </div>
                     <div class="stat-item fade-in-up delay-3">
@@ -1693,15 +2167,41 @@
 }
     </script>
     <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.className = 'fas fa-times';
+                } else {
+                    icon.className = 'fas fa-bars';
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    const icon = mobileMenuToggle.querySelector('i');
+                    icon.className = 'fas fa-bars';
+                });
+            });
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar height
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
                     });
                 }
             });
