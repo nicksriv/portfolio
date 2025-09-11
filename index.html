@@ -471,6 +471,79 @@
             font-style: italic;
         }
 
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .certification-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .certification-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .certification-logo {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .certification-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .certification-logo i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .certification-info {
+            flex: 1;
+        }
+
+        .certification-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-issuer {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-date {
+            color: #666;
+            font-style: italic;
+        }
+
         /* Achievements Section */
         .achievements-grid {
             display: grid;
@@ -949,7 +1022,7 @@
                 gap: 1rem;
                 padding: 0 1rem;
             }
-            
+
             .nav-menu {
                 display: none;
                 position: absolute;
@@ -1049,6 +1122,25 @@
                 height: 50px;
                 margin-right: 0;
                 margin-bottom: 1rem;
+            }
+            
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .certification-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .certification-logo {
+                width: 50px;
+                height: 50px;
+                margin-right: 0;
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
             }
             
             .client-logos {
@@ -1460,6 +1552,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -2071,24 +2164,75 @@
                 <div class="education-card fade-in-up">
                     <div class="education-header">
                         <div class="university-logo">
-                            <img src="logos/upenn.png" alt="University of Pennsylvania Logo">
+                            <img src="logos/georgia-tech.png" alt="Georgia Institute of Technology Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <i class="fas fa-graduation-cap" style="display: none;"></i>
                         </div>
                         <div class="education-info">
-                    <div class="degree">Master of Computer and Information Technology</div>
-                    <div class="university">University of Pennsylvania – Philadelphia, PA</div>
-                    <div class="education-duration">2007 – 2009</div>
+                            <div class="degree">Master of Science in Computer Science - Machine Learning</div>
+                            <div class="university">Georgia Institute of Technology – Atlanta, GA</div>
+                            <div class="education-duration">2021 – 2023</div>
                         </div>
                     </div>
                 </div>
                 <div class="education-card fade-in-up delay-1">
                     <div class="education-header">
                         <div class="university-logo">
+                            <img src="logos/upenn.png" alt="University of Pennsylvania Logo">
+                        </div>
+                        <div class="education-info">
+                            <div class="degree">Master of Computer and Information Technology</div>
+                            <div class="university">University of Pennsylvania – Philadelphia, PA</div>
+                            <div class="education-duration">2007 – 2009</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="education-card fade-in-up delay-2">
+                    <div class="education-header">
+                        <div class="university-logo">
                             <img src="logos/mgr_institute.png" alt="Dr. MGR Educational and Research Institute Logo">
                         </div>
                         <div class="education-info">
-                    <div class="degree">Bachelor of Technology in Electronics & Communication</div>
-                    <div class="university">Dr. MGR Educational and Research Institute – Chennai, India</div>
-                    <div class="education-duration">2003 – 2007</div>
+                            <div class="degree">Bachelor of Technology in Electronics & Communication</div>
+                            <div class="university">Dr. MGR Educational and Research Institute – Chennai, India</div>
+                            <div class="education-duration">2003 – 2007</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section" style="background: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            <div class="certifications-grid">
+                <!-- Fallback certifications in case JavaScript fails -->
+                <div class="certification-card fade-in-up">
+                    <div class="certification-header">
+                        <div class="certification-logo">
+                            <img src="logos/kellogg.png" alt="Kellogg School of Management Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <i class="fas fa-graduation-cap" style="display: none;"></i>
+                        </div>
+                        <div class="certification-info">
+                            <div class="certification-name">Kellogg Executive Scholar - Chief Product Officer Program</div>
+                            <div class="certification-issuer">Kellogg School of Management</div>
+                            <div class="certification-date">June 2025</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card fade-in-up delay-1">
+                    <div class="certification-header">
+                        <div class="certification-logo">
+                            <img src="logos/mit-xpro.png" alt="MIT xPRO Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <i class="fas fa-lightbulb" style="display: none;"></i>
+                        </div>
+                        <div class="certification-info">
+                            <div class="certification-name">Post Graduate Certificate in Technology Leadership and Innovation</div>
+                            <div class="certification-issuer">MIT xPRO</div>
+                            <div class="certification-date">June 2024</div>
                         </div>
                     </div>
                 </div>
@@ -2163,6 +2307,20 @@
     {"name":"Decode","url":"","playStore":"https://play.google.com/store/apps/details?id=com.decode.cx&hl=en_IN","appStore":"","summary":"A live streaming and content creation application. Features include real-time streaming, content discovery, and interactive engagement tools for creators and viewers.","highlights":[],"images":["portfolio-screenshots/image34.png","portfolio-screenshots/image26.png","portfolio-screenshots/image33.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image35.png"]},
     {"name":"Qatalyst","url":"","playStore":"https://play.google.com/store/search?q=qatalyst&c=apps&hl=en_IN","appStore":"","summary":"A business acceleration and innovation platform. Features include startup support, mentorship programs, and business development tools for entrepreneurs and growing companies.","highlights":[],"images":["portfolio-screenshots/image37.png","portfolio-screenshots/image26.png","portfolio-screenshots/image36.png","portfolio-screenshots/image5.png","portfolio-screenshots/image4.png","portfolio-screenshots/image38.png"]},
     {"name":"Vryno","url":"","playStore":"https://play.google.com/store/apps/details?id=com.vryno.crm&hl=en_IN","appStore":"","summary":"An enterprise CRM application for lead and deal management. Features include lead tracking, deal pipeline management, and comprehensive customer relationship tools for business growth.","highlights":[],"images":["portfolio-screenshots/image39.png","portfolio-screenshots/image26.png","portfolio-screenshots/image5.png","portfolio-screenshots/image41.png","portfolio-screenshots/image4.png","portfolio-screenshots/image40.png"]}
+  ],
+  "certificates": [
+    {
+      "name": "Kellogg Executive Scholar - Chief Product Officer Program",
+      "issuer": "Kellogg School of Management",
+      "date": "June 2025",
+      "url": "https://www.kellogg.northwestern.edu/executive-education/individual-programs/chief-product-officer-program.aspx"
+    },
+    {
+      "name": "Post Graduate Certificate in Technology Leadership and Innovation",
+      "issuer": "MIT xPRO",
+      "date": "June 2024",
+      "url": "https://xpro.mit.edu/courses/technology-leadership-and-innovation/"
+    }
   ]
 }
     </script>

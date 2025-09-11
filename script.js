@@ -1,16 +1,21 @@
 async function loadResume() {
+  console.log('loadResume function called');
   let data;
   try {
     const inline = document.getElementById('resume-data');
+    console.log('Inline element found:', inline);
     if (inline && inline.textContent.trim()) {
       data = JSON.parse(inline.textContent);
+      console.log('Parsed inline data:', data);
     }
   } catch (e) {
     console.warn('Failed to parse inline resume JSON, will fetch data.json', e);
   }
   if (!data) {
+    console.log('No inline data, fetching data.json');
     const response = await fetch('data.json', { cache: 'no-cache' });
     data = await response.json();
+    console.log('Fetched data.json:', data);
   }
 
   const avatar = document.getElementById('avatar');
@@ -185,12 +190,64 @@ async function loadResume() {
     eduEl.appendChild(div);
   });
 
-  const certEl = document.getElementById('certifications');
-  (data.certificates || data.certifications || []).forEach(c => {
-    const li = document.createElement('li');
-    li.textContent = `${c.name}${c.issuer ? ' — ' + c.issuer : ''}`;
-    certEl.appendChild(li);
-  });
+  // Handle certifications - populate the certifications grid
+  const certGrid = document.querySelector('.certifications-grid');
+  console.log('Certifications grid found:', certGrid);
+  console.log('Certificates data:', data.certificates);
+  
+  if (certGrid && Array.isArray(data.certificates)) {
+    // Clear existing hardcoded certifications
+    certGrid.innerHTML = '';
+    console.log('Cleared certifications grid, adding', data.certificates.length, 'certifications');
+    
+    data.certificates.forEach((cert, index) => {
+      const certCard = document.createElement('div');
+      certCard.className = `certification-card fade-in-up${index > 0 ? ` delay-${index}` : ''}`;
+      
+      // Determine icon based on certification name
+      let iconClass = 'fas fa-certificate'; // default icon
+      if (cert.name.toLowerCase().includes('aws')) {
+        iconClass = 'fab fa-aws';
+      } else if (cert.name.toLowerCase().includes('azure') || cert.name.toLowerCase().includes('microsoft')) {
+        iconClass = 'fab fa-microsoft';
+      } else if (cert.name.toLowerCase().includes('security') || cert.name.toLowerCase().includes('cism')) {
+        iconClass = 'fas fa-shield-alt';
+      } else if (cert.name.toLowerCase().includes('project') || cert.name.toLowerCase().includes('pmp')) {
+        iconClass = 'fas fa-project-diagram';
+      } else if (cert.name.toLowerCase().includes('kellogg') || cert.name.toLowerCase().includes('executive') || cert.name.toLowerCase().includes('chief product officer')) {
+        iconClass = 'fas fa-graduation-cap';
+      } else if (cert.name.toLowerCase().includes('mit') || cert.name.toLowerCase().includes('technology leadership') || cert.name.toLowerCase().includes('innovation')) {
+        iconClass = 'fas fa-lightbulb';
+      }
+      
+      // Determine logo path based on issuer
+      let logoPath = '';
+      if (cert.issuer && cert.issuer.toLowerCase().includes('kellogg')) {
+        logoPath = 'logos/kellogg.png';
+      } else if (cert.issuer && cert.issuer.toLowerCase().includes('mit')) {
+        logoPath = 'logos/mit-xpro.png';
+      }
+
+      certCard.innerHTML = `
+        <div class="certification-header">
+          <div class="certification-logo">
+            ${logoPath ? `<img src="${logoPath}" alt="${cert.issuer} Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">` : ''}
+            <i class="${iconClass}" style="${logoPath ? 'display: none;' : ''}"></i>
+          </div>
+          <div class="certification-info">
+            <div class="certification-name">${cert.name}</div>
+            <div class="certification-issuer">${cert.issuer || ''}</div>
+            <div class="certification-date">${cert.date || ''}</div>
+          </div>
+        </div>
+      `;
+      
+      certGrid.appendChild(certCard);
+    });
+    console.log('Finished adding certifications to grid');
+  } else {
+    console.log('Certifications grid not found or no certificates data');
+  }
 
   const awardsEl = document.getElementById('awards');
   (data.awards || []).forEach(a => {
