@@ -132,9 +132,11 @@ async function loadResume() {
       gallery.className = 'screenshots';
       p.images.forEach((src, idx) => {
         const a = document.createElement('a');
-        a.href = src;
-        a.target = '_blank';
-        a.rel = 'noopener';
+        a.href = '#';
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          showImageModal(src, `${p.name || 'Project'} screenshot ${idx + 1}`);
+        });
         const img = document.createElement('img');
         img.src = src;
         img.alt = `${p.name || 'Project'} screenshot ${idx + 1}`;
@@ -275,3 +277,58 @@ loadResume().catch(err => {
   console.error(err);
   document.getElementById('summary').textContent = 'Failed to load resume data. Please check data.json.';
 });
+
+function showImageModal(src, alt) {
+  // Create modal elements
+  const modal = document.createElement('div');
+  modal.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+  `;
+  
+  const modalImg = document.createElement('img');
+  modalImg.src = src;
+  modalImg.alt = alt;
+  modalImg.style.cssText = `
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+  `;
+  
+  const closeBtn = document.createElement('div');
+  closeBtn.innerHTML = '&times;';
+  closeBtn.style.cssText = `
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+  `;
+  
+  // Add event listeners
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target === closeBtn) {
+      document.body.removeChild(modal);
+    }
+  });
+  
+  // Add elements to modal
+  modal.appendChild(modalImg);
+  modal.appendChild(closeBtn);
+  
+  // Add modal to body
+  document.body.appendChild(modal);
+}
