@@ -1,0 +1,10 @@
+.DS_Store
+.tmp_pptx_extract/
+*.pptx
+*Resume*.pdf
+*Resume*.docx
+Nikhil_Srivastava_Resume.html
+nikhil_resume_website.html
+# Ignore macOS resource forks and Thumbs.db
+__MACOSX/
+Thumbs.db
