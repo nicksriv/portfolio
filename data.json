@@ -707,14 +707,6 @@
   ],
   "education": [
     {
-      "institution": "Georgia Institute of Technology",
-      "studyType": "Master of Science in Computer Science",
-      "area": "Machine Learning",
-      "startDate": "2021",
-      "endDate": "2023",
-      "score": "Atlanta, GA"
-    },
-    {
       "institution": "University of Pennsylvania",
       "studyType": "Master of Computer and Information Technology",
       "area": "",
@@ -729,20 +721,6 @@
       "startDate": "2003",
       "endDate": "2007",
       "score": "Chennai, India"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Kellogg Executive Scholar - Chief Product Officer Program",
-      "issuer": "Kellogg School of Management",
-      "date": "June 2025",
-      "url": "https://www.kellogg.northwestern.edu/executive-education/individual-programs/chief-product-officer-program.aspx"
-    },
-    {
-      "name": "Advanced Program in Technology Leadership and Innovation",
-      "issuer": "MIT xPRO",
-      "date": "June 2024",
-      "url": "https://xpro.mit.edu/courses/technology-leadership-and-innovation/"
     }
   ],
   "awards": [],
